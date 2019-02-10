@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="179.0" prefWidth="392.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.difesa.esercito.rav17.infermeria.controllo.CreaFileIPController">
+    <stylesheets>
+        <URL value="@stile.css" />
+    </stylesheets>
+<children><Label alignment="CENTER" layoutY="1.0" prefHeight="17.0" prefWidth="392.0" text="Salva IP Server MySQL">
+<font>
+<Font name="Arial Black" size="18.0" />
+</font></Label><Label layoutX="27.0" layoutY="50.0" prefHeight="21.0" prefWidth="81.0" text="indirizzo IP">
+<font>
+<Font name="Arial" size="14.0" />
+</font>
+</Label><TextField fx:id="campoIP" layoutX="108.0" layoutY="47.0" prefHeight="27.0" prefWidth="270.0">
+<font>
+<Font name="Arial Black" size="13.0" />
+</font></TextField><Button fx:id="pulsanteSalva" layoutX="243.0" layoutY="132.0" mnemonicParsing="false" onAction="#salvaIP" prefHeight="27.0" prefWidth="122.0" text="Salva" /><Button fx:id="pulsanteAnnulla" layoutX="108.0" layoutY="132.0" mnemonicParsing="false" onAction="#annulla" prefHeight="27.0" prefWidth="122.0" text="Annulla" /><Label fx:id="messaggio" layoutX="27.0" layoutY="90.0" prefHeight="21.0" prefWidth="351.0" text="messaggio di errore!" textFill="#fc0000">
+<font>
+<Font name="Arial Bold Italic" size="14.0" />
+</font>
+</Label>
+</children>
+</AnchorPane>

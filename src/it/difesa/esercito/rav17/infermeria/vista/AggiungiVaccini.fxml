@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="395.0" prefWidth="863.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.difesa.esercito.rav17.infermeria.controllo.AggiungiVacciniController">
+    <stylesheets>
+        <URL value="@stile.css" />
+    </stylesheets>
+<children><Button layoutX="602.0" layoutY="348.0" mnemonicParsing="false" onAction="#aggiungiVaccino" prefHeight="40.0" prefWidth="138.0" text="Chiudi">
+<font>
+<Font name="Arial Black" size="13.0" />
+</font></Button><Button layoutX="747.0" layoutY="348.0" mnemonicParsing="false" onAction="#stampa" prefHeight="40.0" prefWidth="109.0" text="Stampa">
+<font>
+<Font name="Arial Black" size="13.0" />
+</font>
+<graphic><ImageView fitHeight="30.0" fitWidth="30.0" layoutX="673.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../immagini/stampa.png" />
+</image></ImageView>
+</graphic>
+</Button><Label layoutX="14.0" text="Aggiungi Vaccino">
+<font>
+<Font name="Arial Black" size="24.0" />
+</font></Label><Button layoutX="1324.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#chiusuraSenzaSalvare" prefHeight="28.0" prefWidth="35.0" style="-fx-background-color: red; -fx-border-color: red;" text="X" textFill="WHITE" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<font>
+<Font name="Arial Black" size="12.0" />
+</font>
+</Button><GridPane layoutX="4.0" layoutY="186.0" prefHeight="137.0" prefWidth="863.0" style="-fx-border-color: green;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="187.0">
+<children>
+<Button mnemonicParsing="false" onAction="#aggiungiMeningite1D" prefHeight="26.0" prefWidth="104.0" text="Meningite [1D]">
+<font>
+<Font name="Arial" size="12.0" />
+</font>
+</Button>
+<Button mnemonicParsing="false" onAction="#aggiungiEpatiteA_CB1" prefHeight="26.0" prefWidth="104.0" text="Epatite A [CB1]" GridPane.columnIndex="1">
+<font>
+<Font name="Arial" size="12.0" />
+</font>
+</Button>
+<Button mnemonicParsing="false" onAction="#aggiungiEpatiteB_CB1" prefHeight="26.0" prefWidth="104.0" text="Epatite B [CB1]" GridPane.columnIndex="2">
+<font>
+<Font name="Arial" size="12.0" />
+</font>
+</Button>
+<Button mnemonicParsing="false" onAction="#aggiungiEpatiteAB_CB1" prefHeight="26.0" prefWidth="105.0" text="Ep. A+B [CB1]" GridPane.columnIndex="3">
+<font>
+<Font name="Arial" size="12.0" />
+</font>
+</Button>
+<Button mnemonicParsing="false" onAction="#aggiungiMorRoPar1D" prefHeight="26.0" prefWidth="106.0" text="Mor.Ro.Par. [1D]" GridPane.columnIndex="4">
+<font>
+<Font name="Arial Bold" size="10.0" />
+</font>
+</Button>
+<Button mnemonicParsing="false" onAction="#aggiungiEpatiteA_CB2" prefHeight="26.0" prefWidth="110.0" text="Epatite A [CB2]" GridPane.columnIndex="1" GridPane.rowIndex="1">
+<font>
+<Font name="Arial" size="12.0" />
+</font>
+</Button>
+<Button mnemonicParsing="false" onAction="#aggiungiEpatiteB_CB2" prefHeight="26.0" prefWidth="110.0" text="Epatite B [CB2]" GridPane.columnIndex="2" GridPane.rowIndex="1">
+<font>
+<Font name="Arial" size="12.0" />
+</font>
+</Button>
+<Button mnemonicParsing="false" onAction="#aggiungiEpatiteB_CB3" prefHeight="26.0" prefWidth="101.0" text="Epatite B [CB3]" GridPane.columnIndex="2" GridPane.rowIndex="2">
+<font>
+<Font name="Arial" size="12.0" />
+</font>
+</Button>
+<Button mnemonicParsing="false" onAction="#aggiungiEpatiteB_B" prefHeight="26.0" prefWidth="84.0" text="Epatite B [B]" GridPane.columnIndex="2" GridPane.rowIndex="3">
+<font>
+<Font name="Arial" size="12.0" />
+</font>
+</Button>
+<Button mnemonicParsing="false" onAction="#aggiungiEpatiteAB_CB2" prefHeight="26.0" prefWidth="110.0" text="Ep. A+B [CB2]" GridPane.columnIndex="3" GridPane.rowIndex="1">
+<font>
+<Font name="Arial" size="12.0" />
+</font>
+</Button>
+<Button mnemonicParsing="false" onAction="#aggiungiEpatiteAB_CB3" prefHeight="27.0" prefWidth="100.0" text="Ep. A+B [CB3]" GridPane.columnIndex="3" GridPane.rowIndex="2">
+<font>
+<Font name="Arial" size="12.0" />
+</font>
+</Button>
+<Button mnemonicParsing="false" onAction="#aggiungiMorRoParCB2" prefHeight="25.0" prefWidth="110.0" text="Mor.Ro.Par. [CB2]" GridPane.columnIndex="4" GridPane.rowIndex="1">
+<font>
+<Font name="Arial Bold" size="10.0" />
+</font>
+</Button>
+<Button mnemonicParsing="false" onAction="#aggiungiVaricellaCB1" prefHeight="26.0" prefWidth="106.0" text="Varicella [CB1]" GridPane.columnIndex="5">
+<font>
+<Font name="Arial" size="12.0" />
+</font>
+</Button>
+<Button mnemonicParsing="false" onAction="#aggiungiVaricellaCB2" prefHeight="26.0" prefWidth="109.0" text="Varicella [CB2]" GridPane.columnIndex="5" GridPane.rowIndex="1">
+<font>
+<Font name="Arial" size="12.0" />
+</font>
+</Button>
+<Button mnemonicParsing="false" onAction="#aggiungiTetanoDiferiteR" prefHeight="26.0" prefWidth="105.0" text="Tet.Dif. [R]" GridPane.columnIndex="6">
+<font>
+<Font name="Arial" size="12.0" />
+</font>
+</Button>
+<Button mnemonicParsing="false" onAction="#aggiungiTetanoDiferitePolioR" prefHeight="26.0" prefWidth="105.0" text="Tet.Dif.Polio [R]" GridPane.columnIndex="6" GridPane.rowIndex="1">
+<font>
+<Font name="Arial" size="12.0" />
+</font>
+</Button>
+<Button mnemonicParsing="false" onAction="#aggiungiPolioR" prefHeight="26.0" prefWidth="105.0" text="Polio [R]" GridPane.columnIndex="7">
+<font>
+<Font name="Arial" size="12.0" />
+</font>
+</Button>
+<Button mnemonicParsing="false" onAction="#aggiungiAltroVaccino" prefHeight="26.0" prefWidth="105.0" style="-fx-text-fill: red;" text="Altro..." GridPane.columnIndex="7" GridPane.rowIndex="3">
+<font>
+<Font name="Arial Black" size="12.0" />
+</font>
+</Button>
+</children>
+<columnConstraints>
+<ColumnConstraints hgrow="SOMETIMES" maxWidth="169.0" minWidth="10.0" prefWidth="104.0" />
+<ColumnConstraints hgrow="SOMETIMES" maxWidth="169.0" minWidth="10.0" prefWidth="109.0" />
+<ColumnConstraints hgrow="SOMETIMES" maxWidth="176.0" minWidth="10.0" prefWidth="101.0" />
+<ColumnConstraints hgrow="SOMETIMES" maxWidth="176.0" minWidth="10.0" prefWidth="101.0" />
+<ColumnConstraints hgrow="SOMETIMES" maxWidth="176.0" minWidth="10.0" prefWidth="109.0" />
+<ColumnConstraints hgrow="SOMETIMES" maxWidth="176.0" minWidth="10.0" prefWidth="107.0" />
+<ColumnConstraints hgrow="SOMETIMES" maxWidth="176.0" minWidth="10.0" prefWidth="106.0" />
+<ColumnConstraints hgrow="SOMETIMES" maxWidth="176.0" minWidth="10.0" prefWidth="124.0" />
+</columnConstraints>
+<rowConstraints>
+<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+</rowConstraints>
+</GridPane><TableView fx:id="tabellaVaccinazioni" layoutX="7.0" layoutY="37.0" prefHeight="116.0" prefWidth="856.0">
+<columns>
+<TableColumn fx:id="colonnaProfilassi" prefWidth="192.0" text="profilassi" />
+<TableColumn fx:id="colonnaDose" prefWidth="86.0" text="tipo dose" />
+<TableColumn fx:id="colonnaNomeVaccino" prefWidth="149.0" text="nome vacc." />
+<TableColumn fx:id="colonnaLotto" prefWidth="111.0" text="lotto" />
+<TableColumn fx:id="colonnaScadenza" prefWidth="101.0" text="scadenza" />
+<TableColumn fx:id="colonnaInadempienza" prefWidth="285.0" text="inadempienza" />
+</columns>
+<contextMenu>
+<ContextMenu>
+<items>
+<MenuItem mnemonicParsing="false" onAction="#eliminaVaccino" text="Elimina">
+<graphic>
+<ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../immagini/cancella.png" />
+</image>
+</ImageView>
+</graphic>
+</MenuItem>
+<MenuItem mnemonicParsing="false" onAction="#inadempienzaVaccinazione" text="Inadempienza">
+<graphic>
+<ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../immagini/impostazioni.png" />
+</image>
+</ImageView>
+</graphic>
+</MenuItem>
+</items>
+</ContextMenu>
+</contextMenu>
+</TableView><Button layoutX="148.0" layoutY="348.0" mnemonicParsing="false" onAction="#inadempienzaVaccinazione" prefHeight="40.0" prefWidth="143.0" text="Inadempienza">
+<font>
+<Font name="Arial Black" size="12.0" />
+</font>
+<graphic>
+<ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../immagini/impostazioni.png" />
+</image>
+</ImageView>
+</graphic>
+</Button><Button layoutX="14.0" layoutY="348.0" mnemonicParsing="false" onAction="#eliminaVaccino" prefHeight="35.0" prefWidth="127.0" text="Elimina">
+<font>
+<Font name="Arial Black" size="13.0" />
+</font>
+<graphic>
+<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../immagini/elimina.png" />
+</image>
+</ImageView>
+</graphic>
+</Button>
+</children>
+</AnchorPane>

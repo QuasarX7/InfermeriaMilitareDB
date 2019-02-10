@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="278.0" prefWidth="600.0" stylesheets="@stile.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.difesa.esercito.rav17.infermeria.controllo.FinestraConfermaController">
+<children><ImageView fitHeight="239.0" fitWidth="197.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../immagini/infermiera_attesa.gif" />
+</image></ImageView><Label layoutX="6.0" layoutY="1.0" prefHeight="37.0" prefWidth="185.0" text="Attenzione !!!" textFill="#bc1717">
+<font>
+<Font name="Arial Black" size="24.0" />
+</font></Label><TextArea fx:id="domanda" editable="false" layoutX="191.0" layoutY="15.0" prefColumnCount="45" prefHeight="197.0" prefRowCount="20" prefWidth="380.0" style="-fx-control-inner-background: black; -fx-text-fill: white;" text="Sei sicuro che voler effetturare la modifica?" wrapText="true">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font></TextArea><Button layoutX="433.0" layoutY="225.0" mnemonicParsing="false" onAction="#chiudiSenzaSalvare" prefHeight="39.0" prefWidth="130.0" text="No" textFill="#720404">
+<font>
+<Font name="Arial Black" size="18.0" />
+</font></Button><Button layoutX="292.0" layoutY="225.0" mnemonicParsing="false" onAction="#chiudiSalva" prefHeight="39.0" prefWidth="130.0" text="Sì">
+<font>
+<Font name="Arial Black" size="18.0" />
+</font>
+</Button>
+</children></AnchorPane>

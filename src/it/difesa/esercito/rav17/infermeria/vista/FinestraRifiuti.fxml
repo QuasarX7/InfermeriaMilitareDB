@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" onDragDetected="#attivitàMensile" prefHeight="504.0" prefWidth="735.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.difesa.esercito.rav17.infermeria.controllo.FinestraRifiutiController">
+    <stylesheets>
+        <URL value="@stile.css" />
+    </stylesheets>
+<children><Button layoutX="700.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#chiusuraSenzaSalvare" prefHeight="28.0" prefWidth="35.0" style="-fx-background-color: red; -fx-border-color: red;" text="X" textFill="WHITE">
+<font>
+<Font name="Arial Black" size="12.0" />
+</font>
+</Button><TableView fx:id="tabella" layoutX="4.0" layoutY="161.0" prefHeight="289.0" prefWidth="724.0">
+  <columns>
+    <TableColumn fx:id="colonnaProtocollo" prefWidth="70.0" text="protocollo" />
+    <TableColumn fx:id="colonnaDataProduzione" prefWidth="111.0" text="data produzione" /><TableColumn fx:id="colonnaCodice" minWidth="0.0" prefWidth="100.0" text="codice" />
+<TableColumn fx:id="colonnaContenitori" minWidth="0.0" prefWidth="70.0" text="contenitiri" />
+<TableColumn fx:id="colonnaQuantità" minWidth="0.0" prefWidth="59.0" text="kg" /><TableColumn fx:id="colonnaVolume" minWidth="0.0" prefWidth="62.0" text="litri" /><TableColumn fx:id="colonnaDataVersamento" prefWidth="100.0" text="data versamento" /><TableColumn fx:id="colonnaVerbaleVersamento" prefWidth="135.0" text="verbale versamento" />
+  </columns>
+<contextMenu><ContextMenu>
+<items><MenuItem mnemonicParsing="false" onAction="#aggiungiDati" text="Aggiungi">
+<graphic>
+<ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../immagini/aggiungi.png" />
+</image>
+</ImageView>
+</graphic>
+</MenuItem><MenuItem mnemonicParsing="false" onAction="#selezionaDati" text="Seleziona">
+<graphic>
+<ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../immagini/seleziona.png" />
+</image>
+</ImageView>
+</graphic>
+</MenuItem><MenuItem mnemonicParsing="false" onAction="#eliminaDati" text="Elimina">
+<graphic>
+<ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../immagini/elimina.png" />
+</image>
+</ImageView>
+</graphic>
+</MenuItem>
+</items>
+</ContextMenu>
+</contextMenu>
+</TableView><Button layoutX="585.0" layoutY="457.0" mnemonicParsing="false" onAction="#aggiungi" prefHeight="40.0" prefWidth="133.0" text="Aggiungi">
+<font>
+<Font name="Arial Black" size="13.0" />
+</font>
+<graphic>
+<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../immagini/aggiungi.png" />
+</image>
+</ImageView>
+</graphic>
+</Button><Label alignment="CENTER" layoutX="4.0" prefHeight="29.0" prefWidth="695.0" text="Registro Rifiuto Sanitari" textAlignment="CENTER">
+<font>
+<Font name="Arial Black" size="22.0" />
+</font></Label><ImageView fitHeight="134.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../immagini/rischio_biologico.png" />
+</image></ImageView><TextField fx:id="campoContenitoriPericolosi" layoutX="310.0" layoutY="92.0" prefHeight="27.0" prefWidth="84.0" /><Label alignment="CENTER" layoutX="208.0" layoutY="45.0" prefHeight="24.0" prefWidth="485.0" text="Giacenza magazzino">
+<font>
+<Font name="Arial Black" size="16.0" />
+</font></Label><TextField fx:id="campoQuantitàPericolosi" layoutX="420.0" layoutY="94.0" prefHeight="27.0" prefWidth="84.0" /><TextField fx:id="campoVolumePericolosi" layoutX="576.0" layoutY="92.0" prefHeight="27.0" prefWidth="84.0" /><Label layoutX="309.0" layoutY="67.0" text="contenitori">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><Label alignment="CENTER" layoutX="420.0" layoutY="67.0" prefHeight="22.0" prefWidth="84.0" text="quantità">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><Label alignment="CENTER" layoutX="576.0" layoutY="67.0" prefHeight="22.0" prefWidth="84.0" text="volume">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><Label layoutX="504.0" layoutY="96.0" text="kg">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><Label layoutX="660.0" layoutY="95.0" text="litri">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><Label layoutX="206.0" layoutY="67.0" text="codice">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><Label layoutX="206.0" layoutY="95.0" text="180103*">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><Label layoutX="206.0" layoutY="131.0" text="180109">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><Label layoutX="660.0" layoutY="131.0" text="litri">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><Label layoutX="504.0" layoutY="132.0" text="kg">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><TextField fx:id="campoVolumeMedicinali" layoutX="576.0" layoutY="128.0" prefHeight="27.0" prefWidth="84.0" /><TextField fx:id="campoQuantitàMedicinali" layoutX="420.0" layoutY="130.0" prefHeight="27.0" prefWidth="84.0" /><TextField fx:id="campoContenitoriMedicinali" layoutX="310.0" layoutY="128.0" prefHeight="27.0" prefWidth="84.0" /><Button layoutX="14.0" layoutY="457.0" mnemonicParsing="false" onAction="#attivitàMensile" prefHeight="40.0" prefWidth="170.0" text="Attività Mensile">
+<font>
+<Font name="Arial Black" size="13.0" />
+</font>
+<graphic><ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../immagini/libro.png" />
+</image></ImageView>
+</graphic></Button>
+</children>
+</AnchorPane>

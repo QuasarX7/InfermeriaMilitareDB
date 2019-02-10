@@ -1,0 +1,1490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1035.0" styleClass="background" stylesheets="@stile.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.difesa.esercito.rav17.infermeria.controllo.FinestraPrincipaleController">
+    <children>
+        <BorderPane prefHeight="650.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top> 
+<!-- +++++++++++++++++++++     MENU PRINCIPALE     +++++++++++++++++++++++++++++ -->
+                <MenuBar prefHeight="27.0" prefWidth="1003.0" styleClass="background" BorderPane.alignment="CENTER">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Incorporamento">
+                            <items>
+                              <MenuItem mnemonicParsing="false" onAction="#visualizzaCampiNuovoMilitare" text="Nuovo militare" />
+                              <MenuItem mnemonicParsing="false" onAction="#modificaDatiPrincipaliMilitare" text="Modifica militare" />
+                              <MenuItem mnemonicParsing="false" onAction="#visualizzaCampiMisure" text="Misure" />
+                              <MenuItem mnemonicParsing="false" onAction="#visualizzaCampiGML" text="GML" />
+                              <SeparatorMenuItem />
+                              <Menu mnemonicParsing="false" text="Attività">
+                                    <graphic>
+                                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../immagini/grafici.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#visualizzaAttivitaIncorporamento" text="Militari visitati" />
+                                        <MenuItem mnemonicParsing="false" onAction="#visualizzaAttivitaMedici" text="Medico" />
+                                    </items>
+                                </Menu>
+                              <MenuItem mnemonicParsing="false" onAction="#visualizzaRegistroIncorporamento" text="Registro">
+                                <graphic>
+                                    <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../immagini/libro.png" />
+                                        </image>
+                                    </ImageView>
+                                </graphic>
+                              </MenuItem>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Vaccinazioni">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#visualizzaStoriaVaccinale" text="Storia vaccinale" />
+                                <MenuItem mnemonicParsing="false" onAction="#visualizzaNuoveVaccinazioni" text="Nuove vaccinazioni" />
+                                <SeparatorMenuItem />
+                                <MenuItem mnemonicParsing="false" onAction="#visualizzaStamatoStralcioVaccinale" text="Stralcio vaccinale">
+                                    <graphic>
+                                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../immagini/stampato.gif" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </MenuItem>
+                                <Menu mnemonicParsing="false" text="Allegato libretto militare">
+                                    <graphic>
+                                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../immagini/stampato.gif" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#visualizzaStamatoLibVaccinaleMilitare" text="... per militare" />
+                                        <MenuItem mnemonicParsing="false" onAction="#visualizzaStamatoLibVaccinaleCp" text="... per compagnia" />
+                                        <MenuItem mnemonicParsing="false" onAction="#visualizzaStamatoLibVaccinaleCorso" text="... per corso" />
+                                    </items>
+                                </Menu>
+                                <SeparatorMenuItem />
+                                <MenuItem mnemonicParsing="false" onAction="#visualizzaAttività" text="Attività" />
+                                <MenuItem mnemonicParsing="false" onAction="#visualizzaCopertura" text="Copertura vaccinale" />
+                                <MenuItem mnemonicParsing="false" onAction="#visualizzaRegistroVaccinale" text="Registro">
+                                    <graphic>
+                                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../immagini/libro.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </MenuItem>
+                                <SeparatorMenuItem />
+                                <MenuItem mnemonicParsing="false" onAction="#impostazioneDatiVaccinali" text="Impostazioni">
+                                    <graphic>
+                                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../immagini/siringa.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </MenuItem>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Visite Mediche">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#visualizzaVisitaMedica" text="Visite ambulatoriali" />
+                            <MenuItem mnemonicParsing="false" onAction="#visualizzaRicoveri" text="Ricoveri" />
+                            <MenuItem mnemonicParsing="false" onAction="#visualizzaVerbaleModelloML" text="Verbale Mod. ML" />
+                            <MenuItem mnemonicParsing="false" onAction="#visualizzaVerbaleModelloGL" text="Verbale Mod. GL" />
+                          </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Rifiuti">
+                            <items>
+                              <MenuItem mnemonicParsing="false" onAction="#gestioneRifiuti" text="Registro">
+                                <graphic>
+                                    <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../immagini/libro.png" />
+                                        </image>
+                                    </ImageView>
+                                </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#impostazioniRifiuti" text="Impostazioni">
+                                <graphic>
+                                    <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../immagini/impostazioni.png" />
+                                        </image>
+                                    </ImageView>
+                                </graphic>
+                              </MenuItem>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Dati">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#visualizzaRicercaData" text="Ricerca per data" /><Menu mnemonicParsing="false" text="Attività">
+  <items>
+    <MenuItem mnemonicParsing="false" onAction="#visualizzaAreaDebug" text="Debug" />
+                                <MenuItem mnemonicParsing="false" onAction="#visualizzaGraficoIniziale" text="Grafico iniziale" />
+  </items>
+</Menu><MenuItem mnemonicParsing="false" onAction="#visualizzaFiltroDati" text="Filtro dati" />
+                                <MenuItem mnemonicParsing="false" onAction="#visualizzaRapportino" text="Rapportino">
+                                    <graphic>
+                                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../immagini/libro.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </MenuItem>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Impostazioni">
+                            <items>
+                              <MenuItem mnemonicParsing="false" onAction="#gestioneUtenti" text="Utenti" />
+                              <MenuItem mnemonicParsing="false" onAction="#impostazioniStampaVisite" text="Configurazione stampati">
+                                <graphic>
+                                    <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../immagini/impostazioni.png" />
+                                        </image>
+                                    </ImageView>
+                                </graphic>
+                              </MenuItem><MenuItem mnemonicParsing="false" onAction="#gestioneMedici" text="Medici" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+<!-- +++++++++++++++++++++  fine MENU PRINCIPALE   +++++++++++++++++++++++++++++ -->
+            </top>
+            <center>
+                <StackPane fx:id="pannelloPrincipale" prefHeight="649.0" prefWidth="745.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Pane fx:id="pannelloInfo" prefHeight="614.0" prefWidth="745.0" visible="false">
+                            <children>
+                                <Label fx:id="etichettaUtente" prefHeight="37.0" prefWidth="721.0" text="Benvenuto ">
+                                    <font>
+                                        <Font name="Arial Black" size="24.0" />
+                                    </font>
+                                </Label>
+                                <BarChart fx:id="diagrammaAttivita" layoutY="87.0" prefHeight="534.0" prefWidth="721.0">
+                                    <xAxis>
+                                      <CategoryAxis fx:id="dataAttivita" label="data" side="BOTTOM" tickMarkVisible="false" />
+                                    </xAxis>
+                                    <yAxis>
+                                      <NumberAxis fx:id="numeroAttivita" label="n°" minorTickCount="10" side="LEFT" tickUnit="1.0" />
+                                    </yAxis>
+                                </BarChart>
+                            </children>
+                        </Pane>
+                        <Pane fx:id="pannelloMilitare" prefHeight="166.0" prefWidth="0.0">
+                            <children>
+                                <VBox prefHeight="655.0" prefWidth="704.0">
+                                    <children>
+                                        <Label fx:id="etichettaStato" alignment="CENTER" prefHeight="22.0" prefWidth="705.0" text="Attività">
+                                            <font>
+                                                <Font name="Arial Black" size="26.0" />
+                                            </font>
+                                            <!-- 
+                                            +++++++++++  MENU MOUSE ++++++++++++++++++++++++++++++++++++++++++
+                                            inserito dentro l'etichetta solo per aggangiare alla finestra
+                                            -->
+                                            <contextMenu>
+                                                <ContextMenu fx:id="menuDati">
+                                                    <items>
+                                                        <MenuItem mnemonicParsing="false" onAction="#aggiungiDati" text="Aggiungi">
+                                                            <graphic>
+                                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                    <image>
+                                                                        <Image url="@../immagini/aggiungi.png" />
+                                                                    </image>
+                                                                </ImageView>
+                                                            </graphic>
+                                                        </MenuItem>
+                                                        <MenuItem mnemonicParsing="false" onAction="#selezionaDati" text="Seleziona">
+                                                            <graphic>
+                                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                    <image>
+                                                                        <Image url="@../immagini/seleziona.png" />
+                                                                    </image>
+                                                                </ImageView>
+                                                            </graphic>
+                                                        </MenuItem>
+                                                        <MenuItem mnemonicParsing="false" onAction="#eliminaDati" text="Elimina">
+                                                            <graphic>
+                                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                    <image>
+                                                                        <Image url="@../immagini/elimina.png" />
+                                                                    </image>
+                                                                </ImageView>
+                                                            </graphic>
+                                                        </MenuItem>
+                                                    </items>
+                                                </ContextMenu>
+                                            </contextMenu>
+                                            <!-- ++++++++ fine MENU MOUSE ++++++++++++++++++++++++++++++++++++++++++ -->
+                                        </Label>
+                                        <Pane fx:id="pannelloIdentificativo" prefHeight="119.0" prefWidth="707.0" style="-fx-background-color: #444;">
+                                            <children>
+                                                <Label layoutX="14.0" layoutY="9.0" prefHeight="17.0" prefWidth="43.0" text="Grado">
+                                                    <font>
+                                                        <Font name="Arial Black" size="10.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="campoGrado" editable="false" layoutX="73.0" layoutY="5.0" prefHeight="25.0" prefWidth="120.0">
+                                                    <font>
+                                                        <Font name="Arial Black" size="11.0" />
+                                                    </font>
+                                                </TextField>
+                                                <TextField fx:id="campoCognome" editable="false" layoutX="72.0" layoutY="40.0" prefHeight="25.0" prefWidth="200.0">
+                                                    <font>
+                                                        <Font name="Arial Black" size="11.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label layoutX="7.0" layoutY="44.0" prefHeight="17.0" prefWidth="58.0" text="Cognome">
+                                                    <font>
+                                                        <Font name="Arial Black" size="10.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label layoutX="275.0" layoutY="44.0" prefHeight="17.0" prefWidth="36.0" text="Nome">
+                                                    <font>
+                                                        <Font name="Arial Black" size="10.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="campoNome" editable="false" layoutX="311.0" layoutY="40.0" prefHeight="25.0" prefWidth="230.0">
+                                                    <font>
+                                                        <Font name="Arial Black" size="11.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label layoutX="545.0" layoutY="44.0" prefHeight="17.0" prefWidth="47.0" text="Nascita">
+                                                    <font>
+                                                        <Font name="Arial Black" size="10.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="campoNascita" editable="false" layoutX="592.0" layoutY="40.0" prefHeight="25.0" prefWidth="100.0">
+                                                    <font>
+                                                        <Font name="Arial Black" size="11.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label layoutX="201.0" layoutY="9.0" prefHeight="17.0" prefWidth="21.0" text="Cp">
+                                                    <font>
+                                                        <Font name="Arial Black" size="10.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="campoCp" editable="false" layoutX="222.0" layoutY="5.0" prefHeight="25.0" prefWidth="130.0">
+                                                    <font>
+                                                        <Font name="Arial Black" size="11.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label layoutX="369.0" layoutY="9.0" prefHeight="17.0" prefWidth="38.0" text="Corso">
+                                                    <font>
+                                                        <Font name="Arial Black" size="10.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="campoCorso" editable="false" layoutX="407.0" layoutY="5.0" prefHeight="25.0" prefWidth="130.0">
+                                                    <font>
+                                                        <Font name="Arial Black" size="11.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Button defaultButton="true" layoutX="550.0" layoutY="4.0" mnemonicParsing="false" onAction="#visualizzaPannelloRicerca" prefHeight="27.0" prefWidth="142.0" text="Cerca">
+                                                    <font>
+                                                        <Font name="Arial Black" size="13.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets left="2.0" top="5.0" />
+                                            </VBox.margin>
+                                        </Pane>
+                                        <Label fx:id="etichettaUltimaModificaMilirare" layoutY="513.0" prefHeight="37.0" prefWidth="493.0" text="Ultima modifica dati..." textFill="#042ae4">
+                                            <font>
+                                                <Font name="Arial Narrow Bold Italic" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <Pane prefHeight="513.0" prefWidth="704.0">
+                                        <children>
+                                            <StackPane fx:id="pannelloSecondario" prefHeight="485.0" prefWidth="711.0">
+                                                <children>
+                                                    <Pane fx:id="pannelloInputStoriaVaccinale" prefHeight="484.0" prefWidth="709.0" visible="false">
+                                                        <children>
+                                                            <Accordion fx:id="schedeInputStoriaVaccinale" layoutX="-2.0" prefHeight="359.0" prefWidth="706.0">
+                                                                <panes>
+                                                                    <TitledPane animated="false" text="TETANO-DIFTERITE">
+                                                                        <content>
+                                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="379.0" prefWidth="702.0">
+                                                                                <children>
+                                                                                    <Pane prefHeight="33.0" prefWidth="701.0">
+                                                                                        <children>
+                                                                                            <TextField fx:id="dataInputTD" layoutX="584.0" prefHeight="27.0" prefWidth="114.0" />
+                                                                                                <ComboBox fx:id="menuInputDoseTD" editable="true" layoutX="444.0" prefHeight="27.0" prefWidth="87.0" />
+                                                                                            <Label layoutX="152.0" prefHeight="27.0" prefWidth="96.0" text="ultima vacc.">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="545.0" prefHeight="27.0" prefWidth="37.0" text="data">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="404.0" prefHeight="27.0" prefWidth="38.0" text="dose">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccMilitareTD" layoutX="312.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" text="militare">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccCivileTD" layoutX="252.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="58.0" text="civile">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <CheckBox fx:id="casellaPregressaDocInputTD" layoutX="13.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="129.0" text="pregressa doc." />
+                                                                                        </children>
+                                                                                    </Pane>
+                                                                                </children>
+                                                                            </AnchorPane>
+                                                                        </content>
+                                                                    </TitledPane>
+                                                                    <TitledPane animated="false" text="TETANO-DIFTERITE-POLIO">
+                                                                        <content>
+                                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="29.0" prefWidth="702.0">
+                                                                                <children>
+                                                                                    <Pane prefHeight="33.0" prefWidth="701.0">
+                                                                                        <children>
+                                                                                            <TextField fx:id="dataInputTDP" layoutX="584.0" prefHeight="27.0" prefWidth="114.0" />
+                                                                                            <ComboBox fx:id="menuInputDoseTDP" editable="true" layoutX="444.0" prefHeight="27.0" prefWidth="87.0" />
+                                                                                            <Label layoutX="152.0" prefHeight="27.0" prefWidth="96.0" text="ultima vacc.">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="545.0" prefHeight="27.0" prefWidth="37.0" text="data">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="404.0" prefHeight="27.0" prefWidth="38.0" text="dose">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccMilitareTDP" layoutX="312.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" text="militare">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccCivileTDP" layoutX="252.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="58.0" text="civile">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <CheckBox fx:id="casellaPregressaDocInputTDP" layoutX="13.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="129.0" text="pregressa doc." />
+                                                                                        </children>
+                                                                                    </Pane>
+                                                                                </children>
+                                                                            </AnchorPane> 
+                                                                        </content>
+                                                                    </TitledPane>
+                                                                    <TitledPane animated="false" text="POLIO">
+                                                                        <content>
+                                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="379.0" prefWidth="702.0">
+                                                                                <children>
+                                                                                    <Pane prefHeight="33.0" prefWidth="701.0">
+                                                                                        <children>
+                                                                                            <TextField fx:id="dataInputPolio" layoutX="584.0" prefHeight="27.0" prefWidth="114.0" />
+                                                                                            <ComboBox fx:id="menuInputDosePolio" editable="true" layoutX="444.0" prefHeight="27.0" prefWidth="87.0" />
+                                                                                            <Label layoutX="152.0" prefHeight="27.0" prefWidth="96.0" text="ultima vacc.">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="545.0" prefHeight="27.0" prefWidth="37.0" text="data">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="404.0" prefHeight="27.0" prefWidth="38.0" text="dose">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccMilitarePolio" layoutX="312.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" text="militare">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccCivilePolio" layoutX="252.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="58.0" text="civile">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <CheckBox fx:id="casellaPregressaDocInputPolio" layoutX="13.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="129.0" text="pregressa doc." />
+                                                                                        </children>
+                                                                                    </Pane>
+                                                                                </children>
+                                                                            </AnchorPane>
+                                                                        </content>
+                                                                    </TitledPane>
+                                                                    <TitledPane animated="false" text="EPATITE B">
+                                                                        <content>
+                                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="379.0" prefWidth="702.0">
+                                                                                <children>
+                                                                                    <Pane prefHeight="33.0" prefWidth="701.0">
+                                                                                        <children>
+                                                                                            <TextField fx:id="dataInputEpB" layoutX="584.0" prefHeight="27.0" prefWidth="114.0" />
+                                                                                            <ComboBox fx:id="menuInputDoseEpB" editable="true" layoutX="444.0" prefHeight="27.0" prefWidth="87.0" />
+                                                                                            <Label layoutX="152.0" prefHeight="27.0" prefWidth="96.0" text="ultima vacc.">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="545.0" prefHeight="27.0" prefWidth="37.0" text="data">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="404.0" prefHeight="27.0" prefWidth="38.0" text="dose">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccMilitareEpB" layoutX="312.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" text="militare">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccCivileEpB" layoutX="252.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="58.0" text="civile">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <CheckBox fx:id="casellaPregressaDocInputEpB" layoutX="13.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="129.0" text="pregressa doc." />
+                                                                                        </children>
+                                                                                    </Pane>
+                                                                                </children>
+                                                                            </AnchorPane>
+                                                                        </content>
+                                                                    </TitledPane>
+                                                                    <TitledPane animated="false" text="EPATITE A">
+                                                                        <content>
+                                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="379.0" prefWidth="702.0">
+                                                                                <children>
+                                                                                    <Pane prefHeight="33.0" prefWidth="701.0">
+                                                                                        <children>
+                                                                                            <TextField fx:id="dataInputEpA" layoutX="584.0" prefHeight="27.0" prefWidth="114.0" />
+                                                                                            <ComboBox fx:id="menuInputDoseEpA" editable="true" layoutX="444.0" prefHeight="27.0" prefWidth="87.0" />
+                                                                                            <Label layoutX="152.0" prefHeight="27.0" prefWidth="96.0" text="ultima vacc.">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="545.0" prefHeight="27.0" prefWidth="37.0" text="data">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="404.0" prefHeight="27.0" prefWidth="38.0" text="dose">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccMilitareEpA" layoutX="312.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" text="militare">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccCivileEpA" layoutX="252.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="58.0" text="civile">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <CheckBox fx:id="casellaPregressaDocInputEpA" layoutX="13.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="129.0" text="pregressa doc." />
+                                                                                        </children>
+                                                                                    </Pane>
+                                                                                </children>
+                                                                            </AnchorPane>
+                                                                        </content>
+                                                                    </TitledPane>
+                                                                    <TitledPane animated="false" text="EPATITE A+B">
+                                                                        <content>
+                                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="379.0" prefWidth="702.0">
+                                                                                <children>
+                                                                                    <Pane prefHeight="33.0" prefWidth="701.0">
+                                                                                        <children>
+                                                                                            <TextField fx:id="dataInputEpAB" layoutX="584.0" prefHeight="27.0" prefWidth="114.0" />
+                                                                                            <ComboBox fx:id="menuInputDoseEpAB" editable="true" layoutX="444.0" prefHeight="27.0" prefWidth="87.0" />
+                                                                                            <Label layoutX="152.0" prefHeight="27.0" prefWidth="96.0" text="ultima vacc.">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="545.0" prefHeight="27.0" prefWidth="37.0" text="data">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="404.0" prefHeight="27.0" prefWidth="38.0" text="dose">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccMilitareEpAB" layoutX="312.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" text="militare">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccCivileEpAB" layoutX="252.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="58.0" text="civile">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <CheckBox fx:id="casellaPregressaDocInputEpAB" layoutX="13.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="129.0" text="pregressa doc." />
+                                                                                        </children>
+                                                                                    </Pane>
+                                                                                </children>
+                                                                            </AnchorPane>
+                                                                        </content>
+                                                                    </TitledPane>
+                                                                    <TitledPane animated="false" text="MORBILLO-ROSOLIA-PAROTITE">
+                                                                        <content>
+                                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="379.0" prefWidth="702.0">
+                                                                                <children>
+                                                                                    <Pane prefHeight="33.0" prefWidth="701.0">
+                                                                                        <children>
+                                                                                            <TextField fx:id="dataInputMPR" layoutX="584.0" prefHeight="27.0" prefWidth="114.0" />
+                                                                                            <ComboBox fx:id="menuInputDoseMPR" editable="true" layoutX="444.0" prefHeight="27.0" prefWidth="87.0" />
+                                                                                            <Label layoutX="152.0" prefHeight="27.0" prefWidth="96.0" text="ultima vacc.">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="545.0" prefHeight="27.0" prefWidth="37.0" text="data">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="404.0" prefHeight="27.0" prefWidth="38.0" text="dose">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccMilitareMPR" layoutX="312.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" text="militare">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccCivileMPR" layoutX="252.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="58.0" text="civile">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            
+                                                                                            </RadioButton>
+                                                                                            <CheckBox fx:id="casellaPregressaDocInputMPR" layoutX="13.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="129.0" text="pregressa doc." />
+                                                                                        </children>
+                                                                                    </Pane>
+                                                                                </children>
+                                                                            </AnchorPane>
+                                                                        </content>
+                                                                    </TitledPane>
+                                                                    <TitledPane animated="false" text="VARICELLA">
+                                                                        <content>
+                                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="379.0" prefWidth="702.0">
+                                                                                <children>
+                                                                                    <Pane prefHeight="33.0" prefWidth="701.0">
+                                                                                        <children>
+                                                                                            <TextField fx:id="dataInputVar" layoutX="584.0" prefHeight="27.0" prefWidth="114.0" />
+                                                                                            <ComboBox fx:id="menuInputDoseVar" editable="true" layoutX="444.0" prefHeight="27.0" prefWidth="87.0" />
+                                                                                            <Label layoutX="152.0" prefHeight="27.0" prefWidth="96.0" text="ultima vacc.">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="545.0" prefHeight="27.0" prefWidth="37.0" text="data">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="404.0" prefHeight="27.0" prefWidth="38.0" text="dose">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccMilitareVar" layoutX="312.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" text="militare">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccCivileVar" layoutX="252.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="58.0" text="civile">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <CheckBox fx:id="casellaPregressaDocInputVar" layoutX="13.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="129.0" text="pregressa doc." />
+                                                                                        </children>
+                                                                                    </Pane>
+                                                                                </children>
+                                                                            </AnchorPane>
+                                                                        </content>
+                                                                    </TitledPane>
+                                                                    <TitledPane animated="false" text="MENINGITE">
+                                                                        <content>
+                                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="379.0" prefWidth="702.0">
+                                                                                <children>
+                                                                                    <Pane prefHeight="33.0" prefWidth="701.0">
+                                                                                        <children>
+                                                                                            <TextField fx:id="dataInputMen" layoutX="584.0" prefHeight="27.0" prefWidth="114.0" />
+                                                                                            <ComboBox fx:id="menuInputDoseMen" editable="true" layoutX="444.0" prefHeight="27.0" prefWidth="87.0" />
+                                                                                            <Label layoutX="152.0" prefHeight="27.0" prefWidth="96.0" text="ultima vacc.">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="545.0" prefHeight="27.0" prefWidth="37.0" text="data">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="404.0" prefHeight="27.0" prefWidth="38.0" text="dose">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccMilitareMen" layoutX="312.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" text="militare">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccCivileMen" layoutX="252.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="58.0" text="civile">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <CheckBox fx:id="casellaPregressaDocInputMen" layoutX="13.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="129.0" text="pregressa doc." />
+                                                                                        </children>
+                                                                                    </Pane>
+                                                                                </children>
+                                                                            </AnchorPane>
+                                                                        </content>
+                                                                    </TitledPane>
+                                                                    <TitledPane animated="false" text="TIFO">
+                                                                        <content>
+                                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="379.0" prefWidth="702.0">
+                                                                                <children>
+                                                                                    <Pane prefHeight="33.0" prefWidth="701.0">
+                                                                                        <children>
+                                                                                            <TextField fx:id="dataInputTifo" layoutX="584.0" prefHeight="27.0" prefWidth="114.0" />
+                                                                                            <ComboBox fx:id="menuInputDoseTifo" editable="true" layoutX="444.0" prefHeight="27.0" prefWidth="87.0" />
+                                                                                            <Label layoutX="152.0" prefHeight="27.0" prefWidth="96.0" text="ultima vacc.">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="545.0" prefHeight="27.0" prefWidth="37.0" text="data">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="404.0" prefHeight="27.0" prefWidth="38.0" text="dose">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccMilitareTifo" layoutX="312.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" text="militare">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccCivileTifo" layoutX="252.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="58.0" text="civile">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <CheckBox fx:id="casellaPregressaDocInputTifo" layoutX="13.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="129.0" text="pregressa doc." />
+                                                                                        </children>
+                                                                                    </Pane>
+                                                                                </children>
+                                                                            </AnchorPane>
+                                                                        </content>
+                                                                    </TitledPane>
+                                                                    <TitledPane animated="false" text="COLERA">
+                                                                        <content>
+                                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="379.0" prefWidth="702.0">
+                                                                                <children>
+                                                                                    <Pane prefHeight="33.0" prefWidth="701.0">
+                                                                                        <children>
+                                                                                            <TextField fx:id="dataInputCol" layoutX="584.0" prefHeight="27.0" prefWidth="114.0" />
+                                                                                            <ComboBox fx:id="menuInputDoseCol" editable="true" layoutX="444.0" prefHeight="27.0" prefWidth="87.0" />
+                                                                                            <Label layoutX="152.0" prefHeight="27.0" prefWidth="96.0" text="ultima vacc.">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="545.0" prefHeight="27.0" prefWidth="37.0" text="data">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="404.0" prefHeight="27.0" prefWidth="38.0" text="dose">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccMilitareCol" layoutX="312.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" text="militare">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccCivileCol" layoutX="252.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="58.0" text="civile">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <CheckBox fx:id="casellaPregressaDocInputCol" layoutX="13.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="129.0" text="pregressa doc." />
+                                                                                        </children>
+                                                                                    </Pane>
+                                                                                </children>
+                                                                            </AnchorPane>
+                                                                        </content>
+                                                                    </TitledPane>
+                                                                    <TitledPane animated="false" text="FEBBRE GIALLA">
+                                                                        <content>
+                                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="379.0" prefWidth="702.0">
+                                                                                <children>
+                                                                                    <Pane prefHeight="33.0" prefWidth="701.0">
+                                                                                        <children>
+                                                                                            <TextField fx:id="dataInputFG" layoutX="584.0" prefHeight="27.0" prefWidth="114.0" />
+                                                                                            <ComboBox fx:id="menuInputDoseFG" editable="true" layoutX="444.0" prefHeight="27.0" prefWidth="87.0" />
+                                                                                            <Label layoutX="152.0" prefHeight="27.0" prefWidth="96.0" text="ultima vacc.">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="545.0" prefHeight="27.0" prefWidth="37.0" text="data">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <Label layoutX="404.0" prefHeight="27.0" prefWidth="38.0" text="dose">
+                                                                                                <font>
+                                                                                                    <Font name="Arial Black" size="13.0" />
+                                                                                                </font>
+                                                                                            </Label>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccMilitareFG" layoutX="312.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="77.0" text="militare">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <RadioButton fx:id="selettoreUltimaVaccCivileFG" layoutX="252.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="58.0" text="civile">
+                                                                                                <font>
+                                                                                                    <Font name="Arial" size="13.0" />
+                                                                                                </font>
+                                                                                            </RadioButton>
+                                                                                            <CheckBox fx:id="casellaPregressaDocInputFG" layoutX="13.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="129.0" text="pregressa doc." />
+                                                                                        </children>
+                                                                                    </Pane>
+                                                                                </children>
+                                                                            </AnchorPane>
+                                                                        </content>
+                                                                    </TitledPane>
+                                                                </panes>
+                                                            </Accordion>
+                                                        </children>
+                                                    </Pane>
+                                                    <Pane fx:id="pannelloGML" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                                        <children>
+                                                            <Accordion fx:id="raccoglitoreGML" prefHeight="476.0" prefWidth="707.0">
+                                                                <panes>
+                                                                    <TitledPane fx:id="schedaAnamnesi" animated="false" text="ANAMNESI">
+                                                                        <content>
+                                                                            <Pane layoutY="22.0" prefHeight="185.0" prefWidth="705.0" style="-fx-border-color: green;">
+                                                                                <children>
+                                                                                    <Label layoutX="5.0" prefHeight="27.0" prefWidth="112.0" text="luogo di nascita">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </Label>
+                                                                                    <TextField fx:id="campoOutputLuogo" layoutX="111.0" prefHeight="27.0" prefWidth="230.0" />
+                                                                                    <Label layoutX="348.0" prefHeight="27.0" prefWidth="41.0" text="sesso">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </Label>
+                                                                                    <ChoiceBox fx:id="menuOutputSesso" layoutX="389.0" prefHeight="27.0" prefWidth="71.0" />
+                                                                                    <Label layoutX="465.0" prefHeight="27.0" prefWidth="47.0" text="scuola">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </Label>
+                                                                                    <ChoiceBox fx:id="menuOutputScuola" layoutX="511.0" prefHeight="27.0" prefWidth="195.0" />
+                                                                                    <Label layoutX="4.0" layoutY="38.0" prefHeight="27.0" prefWidth="73.0" text="documento">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </Label>
+                                                                                    <ChoiceBox fx:id="menuOutputDocumento" layoutX="77.0" layoutY="34.0" prefHeight="27.0" prefWidth="214.0" />
+                                                                                    <TextField fx:id="campoOutputNrDocumento" layoutX="315.0" layoutY="33.0" prefHeight="27.0" prefWidth="191.0" />
+                                                                                    <Label layoutX="295.0" layoutY="35.0" prefHeight="27.0" prefWidth="25.0" text="n°">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </Label>
+                                                                                    <TextField fx:id="campoOutputAnamnesiFamiliare" layoutX="155.0" layoutY="64.0" prefHeight="27.0" prefWidth="547.0" />
+                                                                                    <Label layoutX="5.0" layoutY="71.0" prefHeight="8.0" prefWidth="127.0" text="anamnesi familiare">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </Label>
+                                                                                    <Label layoutX="5.0" layoutY="99.0" prefHeight="21.0" prefWidth="140.0" text="anamnesi pat. remota">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </Label>
+                                                                                    <TextField fx:id="campoOutputAnamnesiRemota" layoutX="155.0" layoutY="96.0" prefHeight="27.0" prefWidth="547.0" />
+                                                                                    <Label layoutX="5.0" layoutY="126.0" prefHeight="21.0" prefWidth="152.0" text="anamnesi pat. prossima">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </Label>
+                                                                                    <TextField fx:id="campoOutputAnamnesiProssima" layoutX="155.0" layoutY="126.0" prefHeight="27.0" prefWidth="547.0" />
+                                                                                    <CheckBox fx:id="casellaAssenzaG6PDH" layoutX="4.0" layoutY="158.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="184.0" text="assenza enzima G6PDH">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </CheckBox>
+                                                                                    <CheckBox fx:id="casellaAssenzaDocG6PDH" layoutX="218.0" layoutY="158.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="239.0" text="assenza documentazione G6PDH">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </CheckBox>
+                                                                                </children>
+                                                                            </Pane>
+                                                                        </content>
+                                                                        <font>
+                                                                            <Font name="Arial Bold Italic" size="13.0" />
+                                                                        </font>
+                                                                    </TitledPane>
+                                                                    <TitledPane fx:id="schedaMisure" animated="false" text="MISURE">
+                                                                        <font>
+                                                                            <Font name="Arial Bold Italic" size="13.0" />
+                                                                        </font>
+                                                                        <content>
+                                                                            <AnchorPane prefHeight="159.0" prefWidth="705.0">
+                                                                                <children>
+                                                                                    <Label prefHeight="27.0" prefWidth="83.0" text="Altezza (cm)">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </Label>
+                                                                                    <TextField fx:id="campoAltezza" layoutX="86.0" prefHeight="27.0" prefWidth="71.0">
+                                                                                        <font>
+                                                                                            <Font name="Arial" size="13.0" />
+                                                                                        </font>
+                                                                                    </TextField>
+                                                                                    <Label layoutX="184.0" prefHeight="27.0" prefWidth="66.0" text="Peso (kg)">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </Label>
+                                                                                    <TextField fx:id="campoPeso" layoutX="250.0" prefHeight="27.0" prefWidth="70.0">
+                                                                                        <font>
+                                                                                            <Font name="Arial" size="13.0" />
+                                                                                        </font>
+                                                                                    </TextField>
+                                                                                    <Label layoutX="348.0" prefHeight="27.0" prefWidth="79.0" text="Torace (cm)">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </Label>
+                                                                                    <TextField fx:id="campoTorace" layoutX="428.0" prefHeight="27.0" prefWidth="70.0">
+                                                                                        <font>
+                                                                                            <Font name="Arial" size="13.0" />
+                                                                                        </font>
+                                                                                    </TextField>
+                                                                                    <Label fx:id="etichettaIMC" layoutX="533.0" prefHeight="27.0" prefWidth="137.0" text="IMC=" textFill="RED">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </Label>
+                                                                                    <Label layoutY="31.0" prefHeight="27.0" prefWidth="83.0" text="Visus OD">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </Label>
+                                                                                    <TextField fx:id="campoVisusOD" layoutX="85.0" layoutY="34.0" prefHeight="26.0" prefWidth="71.0">
+                                                                                        <font>
+                                                                                            <Font name="Arial" size="13.0" />
+                                                                                        </font>
+                                                                                    </TextField>
+                                                                                    <Label layoutX="183.0" layoutY="31.0" prefHeight="27.0" prefWidth="122.0" text="Visus OD corretto">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </Label>
+                                                                                    <TextField fx:id="campoVisusODcorretto" layoutX="301.0" layoutY="34.0" prefHeight="26.0" prefWidth="68.0">
+                                                                                        <font>
+                                                                                            <Font name="Arial" size="13.0" />
+                                                                                        </font>
+                                                                                    </TextField>
+                                                                                    <Label layoutY="62.0" prefHeight="33.0" prefWidth="83.0" text="Visus OS">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </Label>
+                                                                                    <TextField fx:id="campoVisusOS" layoutX="85.0" layoutY="65.0" prefHeight="27.0" prefWidth="71.0">
+                                                                                        <font>
+                                                                                            <Font name="Arial" size="13.0" />
+                                                                                        </font>
+                                                                                    </TextField>
+                                                                                    <Label layoutX="183.0" layoutY="65.0" prefHeight="27.0" prefWidth="122.0" text="Visus OS corretto">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </Label>
+                                                                                    <TextField fx:id="campoVisusOScorretto" layoutX="301.0" layoutY="64.0" prefHeight="27.0" prefWidth="68.0">
+                                                                                        <font>
+                                                                                            <Font name="Arial" size="13.0" />
+                                                                                        </font>
+                                                                                    </TextField>
+                                                                                    <Label layoutY="101.0" prefHeight="27.0" prefWidth="99.0" text="Pressione Max">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </Label>
+                                                                                    <TextField fx:id="campoPressioneMax" layoutX="101.0" layoutY="101.0" prefHeight="27.0" prefWidth="78.0">
+                                                                                        <font>
+                                                                                            <Font name="Arial" size="13.0" />
+                                                                                        </font>
+                                                                                    </TextField>
+                                                                                    <Label layoutX="210.0" layoutY="101.0" prefHeight="27.0" prefWidth="95.0" text="Pressione Min">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </Label>
+                                                                                    <TextField fx:id="campoPressioneMin" layoutX="307.0" layoutY="101.0" prefHeight="27.0" prefWidth="83.0">
+                                                                                        <font>
+                                                                                            <Font name="Arial" size="13.0" />
+                                                                                        </font>
+                                                                                    </TextField>
+                                                                                    <Label layoutX="416.0" layoutY="101.0" prefHeight="27.0" prefWidth="75.0" text="Frequenza">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </Label>
+                                                                                    <TextField fx:id="campoFrequenza" layoutX="495.0" layoutY="101.0" prefHeight="27.0" prefWidth="87.0">
+                                                                                        <font>
+                                                                                            <Font name="Arial" size="13.0" />
+                                                                                        </font>
+                                                                                    </TextField>
+                                                                                </children>
+                                                                            </AnchorPane>
+                                                                        </content>
+                                                                    </TitledPane>
+                                                                    <TitledPane fx:id="schedaGML" animated="false" text="GML">
+                                                                        <content>
+                                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                                <children>
+                                                                                    <Label layoutX="2.0" prefHeight="27.0" prefWidth="43.0" text="data">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </Label>
+                                                                                    <DatePicker fx:id="dataGML" layoutX="47.0" prefHeight="27.0" prefWidth="147.0" />
+                                                                                    <ComboBox fx:id="menuIdoneità" layoutX="50.0" layoutY="45.0" prefHeight="27.0" prefWidth="238.0" />
+                                                                                    <TextArea fx:id="campoGML" layoutY="79.0" prefHeight="121.0" prefWidth="700.0" />
+                                                                                    <ComboBox fx:id="menuMedicoGML" editable="true" layoutX="64.0" layoutY="208.0" prefHeight="27.0" prefWidth="373.0" />
+                                                                                    <Label layoutX="2.0" layoutY="45.0" prefHeight="27.0" prefWidth="43.0" text="GML">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </Label>
+                                                                                    <Label layoutX="2.0" layoutY="206.0" prefHeight="27.0" prefWidth="50.0" text="Medico">
+                                                                                        <font>
+                                                                                            <Font name="Arial Bold" size="13.0" />
+                                                                                        </font>
+                                                                                    </Label>
+                                                                                    <Button layoutX="10.0" layoutY="350.0" maxHeight="35.0" maxWidth="170.0" minHeight="35.0" minWidth="170.0" mnemonicParsing="false" onAction="#stampaGML" prefHeight="35.0" prefWidth="170.0" text="Stampa e salva">
+                                                                                        <font>
+                                                                                            <Font name="Arial Black" size="13.0" />
+                                                                                        </font>
+                                                                                        <graphic>
+                                                                                            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                <image>
+                                                                                                    <Image url="@../immagini/stampa.png" />
+                                                                                                </image>
+                                                                                            </ImageView>
+                                                                                        </graphic>
+                                                                                    </Button>
+                                                                                </children>
+                                                                            </AnchorPane>
+                                                                        </content>
+                                                                        <font>
+                                                                            <Font name="Arial Bold Italic" size="13.0" />
+                                                                        </font>
+                                                                    </TitledPane>
+                                                                </panes>
+                                                            </Accordion>
+                                                        </children>
+                                                    </Pane>
+                                                    <Pane fx:id="pannelloStoriaVaccinale" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                                        <children>
+                                                            <TableView fx:id="tabellaStoricoVaccinale" onMouseClicked="#aperturaMunuDati" prefHeight="478.0" prefWidth="703.0">
+                                                                <columns>
+                                                                    <TableColumn fx:id="colonnaVaccino" prefWidth="115.0" text="vaccino" />
+                                                                    <TableColumn fx:id="colonnaPregressa" prefWidth="75.0" text="pregressa" />
+                                                                    <TableColumn fx:id="colonnaPregressaDoc" prefWidth="79.0" text="pregr. doc." />
+                                                                    <TableColumn fx:id="colonnaVaccCivile" prefWidth="82.0" text="vacc. civile" />
+                                                                    <TableColumn fx:id="colonnaVaccMilitare" prefWidth="96.0" text="vacc. militare" />
+                                                                    <TableColumn fx:id="colonnaTipoDose" prefWidth="71.0" text="tipo dose" />
+                                                                    <TableColumn fx:id="colonnaTipoVaccino" prefWidth="86.0" text="tipo vaccino" />
+                                                                    <TableColumn fx:id="colonnaDataVaccinazione" prefWidth="95.0" text="data" />
+                                                                </columns>
+                                                            </TableView>
+                                                        </children>
+                                                    </Pane>
+                                                    <Pane fx:id="pannelloNuoveVaccinazioni" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                                        <children>
+                                                            <TableView fx:id="tabellaVaccinazioni" onMouseClicked="#aperturaMunuDati" prefHeight="478.0" prefWidth="705.0">
+                                                                <columns>
+                                                                    <TableColumn fx:id="colonnaDataNuovaVaccinazione" prefWidth="87.0" text="data" />
+                                                                    <TableColumn fx:id="colonnaProfilassi" prefWidth="175.0" text="profilassi" />
+                                                                    <TableColumn fx:id="colonnaNomeVaccino" prefWidth="163.0" text="vaccino" />
+                                                                    <TableColumn fx:id="colonnaDose" prefWidth="61.0" text="dose" />
+                                                                    <TableColumn fx:id="colonnaInadempienza" prefWidth="216.0" text="inadempienza" />
+                                                                </columns>
+                                                            </TableView>
+                                                        </children>
+                                                    </Pane>
+                                                    <Pane fx:id="pannelloRicovero" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                                        <children>
+                                                            <TableView fx:id="tabellaRicoveri" onMouseClicked="#aperturaMunuDati" prefHeight="334.0" prefWidth="704.0">
+                                                                <columns>
+                                                                    <TableColumn fx:id="colonnaDataOraInizioRicovero" prefWidth="137.0" text="ingresso" />
+                                                                    <TableColumn fx:id="colonnaDataOraFineRicovero" prefWidth="137.0" text="uscita" />
+                                                                    <TableColumn fx:id="colonnaDiagnosiRicovero" prefWidth="340.0" text="diagnosi" />
+                                                                </columns>
+                                                            </TableView>
+                                                        </children>
+                                                    </Pane>
+                                                    <Pane fx:id="pannelloVisitaMedica" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                                        <children>
+                                                            <TableView fx:id="tabellaVisitaMedica" onMouseClicked="#aperturaMunuDati" prefHeight="334.0" prefWidth="704.0">
+                                                                <columns>
+                                                                    <TableColumn fx:id="colonnaDataVisitaMedica" prefWidth="137.0" text="data ora" />
+                                                                    <TableColumn fx:id="colonnaTipoVisitaMedica" prefWidth="115.0" text="pronto soccorso" />
+                                                                    <TableColumn fx:id="colonnaDiagnosiVisitaMedica" prefWidth="299.0" text="diagnosi" />
+                                                                    <TableColumn fx:id="colonnaPMLVisitaMedica" maxWidth="237.0" prefWidth="146.0" text="PML" />
+                                                                </columns>
+                                                            </TableView>
+                                                        </children>
+                                                    </Pane>
+                                                    <Pane fx:id="pannelloVerbaleML" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                                        <children>
+                                                            <TableView fx:id="tabellaVerbaleML" onMouseClicked="#aperturaMunuDati" prefHeight="334.0" prefWidth="704.0">
+                                                                <columns>
+                                                                    <TableColumn fx:id="colonnaDataVerbaleML" prefWidth="121.0" text="data" />
+                                                                    <TableColumn fx:id="colonnaDiagnosiML" prefWidth="576.0" text="diagnosi" />
+                                                                </columns>
+                                                            </TableView>
+                                                        </children>
+                                                    </Pane>
+                                                    <Pane fx:id="pannelloVerbaleGL" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                                        <children>
+                                                            <TableView fx:id="tabellaVerbaleGL" onMouseClicked="#aperturaMunuDati" prefHeight="334.0" prefWidth="704.0">
+                                                                <columns>
+                                                                    <TableColumn fx:id="colonnaDataVerbaleGL" prefWidth="121.0" text="data" />
+                                                                    <TableColumn fx:id="colonnaDiagnosiGL" prefWidth="576.0" text="diagnosi" />
+                                                                </columns>
+                                                            </TableView>
+                                                        </children>
+                                                    </Pane>
+                                                </children>
+                                                <padding>
+                                                    <Insets left="2.0" />
+                                                </padding>
+                                            </StackPane>
+                                        </children>
+                                        </Pane>
+                                        <HBox fx:id="barraPulsanti" prefHeight="40.0" prefWidth="704.0">
+                                            <children>
+                                                <Pane fx:id="pulsantiSpeciali" prefHeight="35.0" prefWidth="308.0">
+                                                    <children>
+                                                        <Button fx:id="pulsanteStampa" layoutX="10.0" maxHeight="35.0" maxWidth="110.0" minHeight="35.0" minWidth="110.0" mnemonicParsing="false" onAction="#stampaDati" prefHeight="35.0" prefWidth="110.0" text="Stampa">
+                                                            <graphic>
+                                                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                                    <image>
+                                                                        <Image url="@../immagini/stampa.png" />
+                                                                    </image>
+                                                                </ImageView>
+                                                            </graphic>
+                                                            <font>
+                                                                <Font name="Arial Black" size="13.0" />
+                                                            </font>
+                                                        </Button>
+                                                        <Button fx:id="pulsanteSalva" layoutX="10.0" maxHeight="35.0" maxWidth="170.0" minHeight="35.0" minWidth="170.0" mnemonicParsing="false" onAction="#salvaDati" prefHeight="35.0" prefWidth="170.0" text="Salva">
+                                                            <graphic>
+                                                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                                   <image>
+                                                                       <Image url="@../immagini/salva.png" />
+                                                                   </image>
+                                                                </ImageView>
+                                                            </graphic>
+                                                            <font>
+                                                                <Font name="Arial Black" size="13.0" />
+                                                            </font>
+                                                        </Button><Button fx:id="pulsanteEliminaTutto" layoutX="134.0" maxHeight="35.0" maxWidth="289.0" minHeight="35.0" minWidth="156.0" mnemonicParsing="false" onAction="#eliminaTuttiDati" prefHeight="35.0" prefWidth="165.0" text="Elimina TUTTO">
+<font>
+<Font name="Arial Black" size="13.0" />
+</font>
+<graphic>
+<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../immagini/cancella.png" />
+</image>
+</ImageView>
+</graphic>
+</Button>
+                                                    </children>
+                                                </Pane>
+                                                <Button fx:id="pulsanteAggiungi" maxHeight="35.0" maxWidth="120.0" minHeight="35.0" minWidth="120.0" mnemonicParsing="false" onAction="#aggiungiDati" prefHeight="35.0" prefWidth="120.0" text="Aggiungi">
+                                                    <graphic>
+                                                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../immagini/aggiungi.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                    <font>
+                                                        <Font name="Arial Black" size="13.0" />
+                                                    </font>
+                                                </Button>
+                                                <Button fx:id="pulsanteSelezione" maxHeight="35.0" maxWidth="130.0" minHeight="35.0" minWidth="130.0" mnemonicParsing="false" onAction="#selezionaDati" prefHeight="35.0" prefWidth="130.0" text="Seleziona">
+                                                    <graphic>
+                                                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../immagini/seleziona.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                    <HBox.margin>
+                                                        <Insets left="3.0" />
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font name="Arial Black" size="13.0" />
+                                                    </font>
+                                                </Button>
+                                                <Button fx:id="pulsanteElimina" maxHeight="35.0" maxWidth="110.0" minHeight="35.0" minWidth="110.0" mnemonicParsing="false" onAction="#eliminaDati" prefHeight="35.0" prefWidth="110.0" text="Elimina" textFill="#7c1a1a">
+                                                    <graphic>
+                                                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../immagini/elimina.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                    <HBox.margin>
+                                                        <Insets left="30.0" />
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font name="Arial Black" size="13.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </Pane>
+                        <Pane fx:id="pannelloRicerca" prefHeight="659.0" prefWidth="745.0" visible="false">
+                            <children>
+                                <Label layoutX="22.0" prefHeight="22.0" prefWidth="273.0" text="RICERCA MILITARE" textFill="#0e9e45">
+                                    <font>
+                                        <Font name="Arial Black" size="14.0" />
+                                    </font>
+                                </Label>
+                                <GridPane layoutX="12.0" layoutY="41.0" prefHeight="22.0" prefWidth="688.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="412.0" minWidth="10.0" prefWidth="54.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="395.0" minWidth="10.0" prefWidth="155.0" />
+                                        <ColumnConstraints maxWidth="339.0" minWidth="40.0" prefWidth="89.0" />
+                                        <ColumnConstraints maxWidth="424.0" minWidth="172.0" prefWidth="404.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <TextField fx:id="campoRicercaCognome" layoutX="517.0" layoutY="83.0" onKeyReleased="#ricercaMilitare" prefHeight="27.0" prefWidth="402.0" GridPane.columnIndex="3" />
+                                        <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="112.0" text="COGNOME" GridPane.columnIndex="2">
+                                            <font>
+                                                <Font name="Arial Black" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <ChoiceBox fx:id="menuCorso" prefHeight="17.0" prefWidth="150.0" GridPane.columnIndex="1" />
+                                        <Label alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="56.0" text="Corso">
+                                            <font>
+                                                <Font name="Arial Black" size="13.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </GridPane>
+                                <TableView fx:id="tabellaMilitari" layoutX="6.0" layoutY="76.0" onMouseClicked="#selezionaMilitareTabella" prefHeight="536.0" prefWidth="696.0">
+                                    <columns>
+                                        <TableColumn fx:id="colonnaCorso" prefWidth="107.0" text="corso" />
+                                        <TableColumn fx:id="colonnaCp" minWidth="0.0" prefWidth="130.0" text="cp/bgt" />
+                                        <TableColumn fx:id="colonnaCognome" prefWidth="211.0" text="cognome" />
+                                        <TableColumn fx:id="colonnaNome" prefWidth="145.0" text="nome" />
+                                        <TableColumn fx:id="colonnaNascita" prefWidth="121.0" text="nascita" />
+                                    </columns>
+                                    <contextMenu>
+                                        <ContextMenu>
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" onAction="#modificaMilitare" text="Modifica">
+                                                    <graphic>
+                                                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../immagini/impostazioni.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </MenuItem>
+                                            </items>
+                                        </ContextMenu>
+                                    </contextMenu>
+                                </TableView>
+                            </children>
+                        </Pane>
+                        <Pane fx:id="pannelloNuovoMilitare" prefHeight="692.0" prefWidth="745.0" visible="false">
+                            <children>
+                                <AnchorPane layoutX="-1.0" layoutY="-1.0" prefHeight="556.0" prefWidth="722.0">
+                                    <children>
+                                        <Label layoutX="14.0" layoutY="3.0" prefHeight="22.0" prefWidth="138.0" text="Nuovo MILITARE" textFill="#15a1a1">
+                                            <font>
+                                                <Font name="Arial Black" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Pane layoutY="25.0" prefHeight="46.0" prefWidth="721.0" style="-fx-background-color: grey;">
+                                            <children>
+                                                <Label layoutX="14.0" layoutY="13.0" onMouseClicked="#aggiungiNuovoGrado" onMouseExited="#ripristinaEtichetta" onMouseMoved="#attivaEtichetta" text="Grado">
+                                                    <font>
+                                                        <Font name="Arial Black" size="13.0" />
+                                                    </font>
+                                                </Label>
+                                                <ChoiceBox fx:id="menuInputGrado" layoutX="63.0" layoutY="10.0" prefHeight="27.0" prefWidth="141.0" GridPane.columnIndex="1" />
+                                                <ChoiceBox fx:id="menuInputCp" layoutX="302.0" layoutY="10.0" prefWidth="150.0" GridPane.columnIndex="3" />
+                                                <Label layoutX="219.0" layoutY="13.0" onMouseClicked="#aggiungiNuovaCp" onMouseExited="#ripristinaEtichetta" onMouseMoved="#attivaEtichetta" prefHeight="20.0" prefWidth="76.0" text="Cp/Btg/Rgt">
+                                                    <font>
+                                                        <Font name="Arial Black" size="13.0" />
+                                                    </font>
+                                                    <cursor>
+                                                        <Cursor fx:constant="HAND" />
+                                                    </cursor>
+                                                </Label>
+                                                <Label layoutX="473.0" layoutY="15.0" onMouseClicked="#aggiungiNuovoCorso" onMouseExited="#ripristinaEtichetta" onMouseMoved="#attivaEtichetta" prefHeight="20.0" prefWidth="46.0" text="Corso">
+                                                    <font>
+                                                        <Font name="Arial Black" size="13.0" />
+                                                    </font>
+                                                </Label>
+                                                <ChoiceBox fx:id="menuInputCorso" layoutX="527.0" layoutY="12.0" prefHeight="27.0" prefWidth="70.0" />
+                                                <TextField fx:id="campoInputAnno" layoutX="599.0" layoutY="12.0" prefHeight="27.0" prefWidth="108.0">
+                                                    <font>
+                                                        <Font name="Arial Bold" size="13.0" />
+                                                    </font>
+                                                </TextField>
+                                            </children>
+                                        </Pane>
+                                        <Label layoutX="14.0" layoutY="86.0" text="Cognome">
+                                            <font>
+                                                <Font name="Arial Black" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="campoInputCognome" layoutX="92.0" layoutY="83.0" prefHeight="27.0" prefWidth="242.0">
+                                            <font>
+                                                <Font name="Arial Bold" size="13.0" />
+                                            </font>
+                                        </TextField>
+                                        <Label layoutX="361.0" layoutY="86.0" prefHeight="20.0" prefWidth="52.0" text="Nome">
+                                            <font>
+                                                <Font name="Arial Black" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="campoInputNome" layoutX="413.0" layoutY="83.0" prefHeight="27.0" prefWidth="242.0">
+                                            <font>
+                                                <Font name="Arial Bold" size="13.0" />
+                                            </font>
+                                        </TextField>
+                                        <Label layoutX="14.0" layoutY="125.0" text="Data di nascita">
+                                            <font>
+                                                <Font name="Arial Black" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="281.0" layoutY="125.0" text="Luogo di nascita ">
+                                            <font>
+                                                <Font name="Arial Black" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="campoInputNascita" layoutX="128.0" layoutY="122.0" prefHeight="27.0" prefWidth="149.0" />
+                                        <TextField fx:id="campoInputLuogo" layoutX="413.0" layoutY="122.0" prefHeight="27.0" prefWidth="242.0">
+                                            <font>
+                                                <Font name="Arial Bold" size="13.0" />
+                                            </font>
+                                        </TextField>
+                                        <Label layoutX="14.0" layoutY="162.0" prefHeight="20.0" prefWidth="46.0" text="Sesso">
+                                            <font>
+                                                <Font name="Arial Black" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <ChoiceBox fx:id="menuInputSesso" layoutX="68.0" layoutY="159.0" prefHeight="27.0" prefWidth="70.0" />
+                                        <Label layoutX="171.0" layoutY="162.0" prefHeight="20.0" prefWidth="70.0" text="Scolarità">
+                                            <font>
+                                                <Font name="Arial Black" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <ChoiceBox fx:id="menuInputScuola" layoutX="246.0" layoutY="159.0" prefHeight="27.0" prefWidth="175.0" />
+                                        <Label layoutX="13.0" layoutY="244.0" prefHeight="20.0" prefWidth="156.0" text="Anamnesi famigliare">
+                                            <font>
+                                                <Font name="Arial Black" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <TextArea fx:id="campoInputAnamnesiFamiliare" layoutX="2.0" layoutY="264.0" prefHeight="50.0" prefWidth="719.0" />
+                                        <Label layoutX="7.0" layoutY="320.0" prefHeight="20.0" prefWidth="229.0" text="Anamnesi palologica remota">
+                                            <font>
+                                                <Font name="Arial Black" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <TextArea fx:id="campoInputAnamnesiRemota" layoutX="1.0" layoutY="340.0" prefHeight="50.0" prefWidth="719.0" />
+                                        <Label layoutX="7.0" layoutY="396.0" prefHeight="20.0" prefWidth="229.0" text="Anamnesi palologica prossima">
+                                            <font>
+                                                <Font name="Arial Black" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <TextArea fx:id="campoInputAnamnesiProssima" layoutX="1.0" layoutY="416.0" prefHeight="50.0" prefWidth="719.0" />
+                                        <Button layoutX="520.0" layoutY="583.0" mnemonicParsing="false" onAction="#creaNuovoMilitare" prefHeight="35.0" prefWidth="170.0" text="Salva">
+                                            <font>
+                                                <Font name="Arial Black" size="14.0" />
+                                            </font>
+                                            <graphic>
+                                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../immagini/salva.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Label layoutX="14.0" layoutY="197.0" prefHeight="20.0" prefWidth="157.0" text="Documento d'identià">
+                                            <font>
+                                                <Font name="Arial Black" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <ChoiceBox fx:id="menuInputDocumento" layoutX="171.0" layoutY="194.0" prefHeight="27.0" prefWidth="249.0" />
+                                        <Label layoutX="447.0" layoutY="198.0" prefHeight="20.0" prefWidth="19.0" text="N°">
+                                            <font>
+                                                <Font name="Arial Black" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="campoInputNrDocumento" layoutX="466.0" layoutY="194.0" prefHeight="27.0" prefWidth="242.0">
+                                            <font>
+                                                <Font name="Arial Bold" size="13.0" />
+                                            </font>
+                                        </TextField>
+                                        <CheckBox fx:id="casellaInputAssenzaG6PDH" layoutX="5.0" layoutY="475.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="240.0" text="Carenza enziama G6PDH" textFill="#32ef04">
+                                            <font>
+                                                <Font name="Arial Black" size="13.0" />
+                                            </font>
+                                        </CheckBox>
+                                        <CheckBox fx:id="casellaInputAssenzaDocG6PDH" layoutX="277.0" layoutY="475.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="234.0" text="Assenza certificato G6PDH" textFill="#e1f200">
+                                            <font>
+                                                <Font name="Arial Black" size="13.0" />
+                                            </font>
+                                        </CheckBox>
+                                        <Button layoutX="3.0" layoutY="598.0" mnemonicParsing="false" onAction="#apriFinestraImpostazioniAnamnesi" opacity="0.7" text="Impostazioni" textFill="#1700e4">
+                                            <font>
+                                                <Font name="Arial Bold Italic" size="12.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </Pane>
+                        <Pane fx:id="pannelloDebug" prefHeight="200.0" prefWidth="200.0" visible="false">
+                            <children>
+                                <BorderPane prefHeight="665.0" prefWidth="745.0">
+                                    <top>
+                                        <Label alignment="CENTER" prefHeight="37.0" prefWidth="721.0" text="Debug" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                                            <font>
+                                                <Font name="Arial Black" size="24.0" />
+                                            </font>
+                                        </Label>
+                                    </top>
+                                    <center>
+                                        <TextArea fx:id="areaDebug" editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-control-inner-background: black; -fx-text-fill: greenyellow;" BorderPane.alignment="CENTER">
+                                            <font>
+                                                <Font name="Courier New Bold" size="10.0" />
+                                            </font>
+                                        </TextArea>
+                                    </center>
+                                </BorderPane>
+                            </children>
+                        </Pane>
+                    </children>
+                </StackPane>
+            </center>
+            <left>
+                <Accordion fx:id="schedeLaterali" prefHeight="621.0" prefWidth="290.0" BorderPane.alignment="CENTER">
+                    <panes>
+                        <TitledPane fx:id="schedaOrologio" animated="false" prefHeight="404.0" prefWidth="230.0" text="Data Ora">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="493.0" prefWidth="288.0">
+                                    <children>
+                                        <Pane fx:id="orologio" layoutX="15.0" layoutY="14.0" prefHeight="289.0" prefWidth="233.0" AnchorPane.bottomAnchor="322.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                                        <Pane layoutX="15.0" layoutY="320.0" prefHeight="312.0" prefWidth="272.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="310.0">
+                                            <children>
+                                                <ImageView fx:id="immagine" fitHeight="293.0" fitWidth="269.0" pickOnBounds="true" preserveRatio="true" />
+                                            </children>
+                                        </Pane>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </TitledPane>
+                        <TitledPane animated="false" text="info">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <ListView fx:id="listaInfo" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </TitledPane>
+                    </panes>
+                </Accordion>
+            </left>
+            <bottom>
+                <Label fx:id="messaggio" alignment="CENTER" layoutY="652.0" prefHeight="27.0" prefWidth="1048.0" text="Messagio Errore!" textFill="RED" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="289.0" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font name="Arial Black" size="14.0" />
+                    </font>
+                </Label>
+            </bottom>
+        </BorderPane>
+        <Button layoutX="438.0" layoutY="1.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#chiusuraSenzaSalvare" prefHeight="28.0" prefWidth="35.0" style="-fx-border-color: darkred; -fx-background-color: red; -fx-border-width: 1;" text="X" textFill="WHITE" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <font>
+                <Font name="Arial Black" size="12.0" />
+            </font>
+        </Button>
+        <Button layoutX="438.0" layoutY="1.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#riduciFinestra" prefHeight="28.0" prefWidth="30.0" style="-fx-border-color: orange; -fx-background-color: yellow;" text="▼" textFill="WHITE" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="0.0">
+            <font>
+                <Font name="Arial Bold" size="12.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

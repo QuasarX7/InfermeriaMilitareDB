@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="485.0" prefWidth="959.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.difesa.esercito.rav17.infermeria.controllo.FinestraImpostazioniController">
+    <stylesheets>
+        <URL value="@stile.css" />
+    </stylesheets>
+<children><GridPane layoutX="23.0" layoutY="33.0" prefHeight="367.0" prefWidth="929.0" AnchorPane.topAnchor="20.0">
+  <columnConstraints>
+<ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="193.0" />
+<ColumnConstraints hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="89.0" />
+<ColumnConstraints hgrow="SOMETIMES" maxWidth="212.0" minWidth="10.0" prefWidth="162.0" />
+<ColumnConstraints hgrow="SOMETIMES" maxWidth="223.0" minWidth="10.0" prefWidth="215.0" />
+<ColumnConstraints hgrow="SOMETIMES" maxWidth="214.0" minWidth="10.0" prefWidth="139.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="164.0" minWidth="10.0" prefWidth="131.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+<RowConstraints maxHeight="59.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+<RowConstraints maxHeight="62.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+<RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+<RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+<RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+<RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+<RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+<RowConstraints maxHeight="28.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+<children><Label prefHeight="22.0" prefWidth="113.0" text="Epatite A" GridPane.rowIndex="1">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font></Label><ChoiceBox fx:id="selezionaSom" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" /><Label alignment="CENTER" contentDisplay="CENTER" prefHeight="22.0" prefWidth="194.0" text="PROFILASSI">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><Label alignment="CENTER" contentDisplay="CENTER" prefHeight="22.0" prefWidth="138.0" text="VIA SOMM." GridPane.columnIndex="1">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><Label alignment="CENTER" contentDisplay="TOP" prefHeight="22.0" prefWidth="160.0" text="NOME FARMACO" GridPane.columnIndex="2">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><Label alignment="CENTER" contentDisplay="CENTER" prefHeight="22.0" prefWidth="214.0" text="DITTA" GridPane.columnIndex="3">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><Label alignment="CENTER" prefHeight="22.0" prefWidth="138.0" text="LOTTO" GridPane.columnIndex="4">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><Label alignment="CENTER" prefHeight="22.0" prefWidth="138.0" text="SCADENZA" GridPane.columnIndex="5">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><Label prefHeight="22.0" prefWidth="113.0" text="Epatite B" GridPane.rowIndex="2">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><Label prefHeight="22.0" prefWidth="113.0" text="Epatite A+B" GridPane.rowIndex="3">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><Label prefHeight="22.0" prefWidth="164.0" text="Tetano/Difterite" GridPane.rowIndex="4">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><Label prefHeight="22.0" prefWidth="164.0" text="Tetano/Difterite/Polio" GridPane.rowIndex="5">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><Label prefHeight="22.0" prefWidth="164.0" text="Polio" GridPane.rowIndex="6">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><Label prefHeight="22.0" prefWidth="164.0" text="Varicella" GridPane.rowIndex="7">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><Label prefHeight="22.0" prefWidth="194.0" text="Meningite" GridPane.rowIndex="8">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><Label prefHeight="22.0" prefWidth="194.0" text="Morbillo/Parotite/Rosolia" GridPane.rowIndex="9">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><ChoiceBox fx:id="selezionaSom1" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" /><TextField fx:id="campoNome" GridPane.columnIndex="2" GridPane.rowIndex="1" /><TextField fx:id="campoDitta" GridPane.columnIndex="3" GridPane.rowIndex="1" /><TextField fx:id="campoLotto" GridPane.columnIndex="4" GridPane.rowIndex="1" /><DatePicker fx:id="campoData" GridPane.columnIndex="5" GridPane.rowIndex="1" /><DatePicker fx:id="campoData1" GridPane.columnIndex="5" GridPane.rowIndex="2" /><DatePicker fx:id="campoData2" GridPane.columnIndex="5" GridPane.rowIndex="3" /><DatePicker fx:id="campoData3" GridPane.columnIndex="5" GridPane.rowIndex="4" /><DatePicker fx:id="campoData4" GridPane.columnIndex="5" GridPane.rowIndex="5" /><DatePicker fx:id="campoData5" GridPane.columnIndex="5" GridPane.rowIndex="6" /><DatePicker fx:id="campoData6" GridPane.columnIndex="5" GridPane.rowIndex="7" /><DatePicker fx:id="campoData7" GridPane.columnIndex="5" GridPane.rowIndex="8" /><DatePicker fx:id="campoData8" GridPane.columnIndex="5" GridPane.rowIndex="9" /><ChoiceBox fx:id="selezionaSom2" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" /><ChoiceBox fx:id="selezionaSom3" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" /><ChoiceBox fx:id="selezionaSom4" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" /><ChoiceBox fx:id="selezionaSom5" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" /><ChoiceBox fx:id="selezionaSom6" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" /><ChoiceBox fx:id="selezionaSom7" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="8" /><ChoiceBox fx:id="selezionaSom8" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="9" /><TextField fx:id="campoNome1" GridPane.columnIndex="2" GridPane.rowIndex="2" /><TextField fx:id="campoNome2" GridPane.columnIndex="2" GridPane.rowIndex="3" /><TextField fx:id="campoNome3" GridPane.columnIndex="2" GridPane.rowIndex="4" /><TextField fx:id="campoNome8" GridPane.columnIndex="2" GridPane.rowIndex="9" /><TextField fx:id="campoNome7" GridPane.columnIndex="2" GridPane.rowIndex="8" /><TextField fx:id="campoNome5" GridPane.columnIndex="2" GridPane.rowIndex="6" /><TextField fx:id="campoNome4" GridPane.columnIndex="2" GridPane.rowIndex="5" /><TextField fx:id="campoNome6" GridPane.columnIndex="2" GridPane.rowIndex="7" /><TextField fx:id="campoDitta1" GridPane.columnIndex="3" GridPane.rowIndex="2" /><TextField GridPane.columnIndex="4" GridPane.rowIndex="2" /><TextField fx:id="campoDitta2" GridPane.columnIndex="3" GridPane.rowIndex="3" /><TextField fx:id="campoDitta3" GridPane.columnIndex="3" GridPane.rowIndex="4" /><TextField fx:id="campoDitta4" GridPane.columnIndex="3" GridPane.rowIndex="5" /><TextField fx:id="campoDitta5" GridPane.columnIndex="3" GridPane.rowIndex="6" /><TextField fx:id="campoDitta6" GridPane.columnIndex="3" GridPane.rowIndex="7" /><TextField fx:id="campoDitta7" GridPane.columnIndex="3" GridPane.rowIndex="8" /><TextField fx:id="campoDitta8" GridPane.columnIndex="3" GridPane.rowIndex="9" /><TextField fx:id="campoLotto1" GridPane.columnIndex="4" GridPane.rowIndex="2" /><TextField fx:id="campoLotto2" GridPane.columnIndex="4" GridPane.rowIndex="3" /><TextField fx:id="campoLotto8" GridPane.columnIndex="4" GridPane.rowIndex="9" /><TextField fx:id="campoLotto7" GridPane.columnIndex="4" GridPane.rowIndex="8" /><TextField GridPane.columnIndex="4" GridPane.rowIndex="7" /><TextField fx:id="campoLotto6" GridPane.columnIndex="4" GridPane.rowIndex="7" /><TextField fx:id="campoLotto3" GridPane.columnIndex="4" GridPane.rowIndex="4" /><TextField fx:id="campoLotto5" GridPane.columnIndex="4" GridPane.rowIndex="6" /><TextField fx:id="campoLotto4" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+</children>
+</GridPane><Button layoutX="924.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#chiusura" prefHeight="28.0" prefWidth="35.0" style="-fx-border-color: darkred; -fx-background-color: red; -fx-border-width: 1;" text="X" textFill="WHITE">
+<font>
+<Font name="Arial Black" size="12.0" />
+</font>
+</Button><Button layoutX="726.0" layoutY="432.0" mnemonicParsing="false" onAction="#pulsanteOK" prefHeight="39.0" prefWidth="224.0" text="Salva">
+<font>
+<Font name="Arial Black" size="18.0" />
+</font>
+</Button><Label fx:id="messaggio" layoutX="240.0" layoutY="452.0" prefHeight="20.0" prefWidth="479.0" text="errore" textFill="RED">
+<font>
+<Font name="Arial Black" size="13.0" />
+</font>
+</Label><Label layoutX="23.0" layoutY="393.0" prefHeight="22.0" prefWidth="194.0" text="MEDICO VACCINATORE">
+<font>
+<Font name="Arial Black" size="14.0" />
+</font>
+</Label><ComboBox fx:id="selezionaMedico" editable="true" layoutX="226.0" layoutY="391.0" prefHeight="27.0" prefWidth="496.0" /><Button layoutX="8.0" layoutY="422.0" mnemonicParsing="false" onAction="#forzaAggiornamento" prefHeight="59.0" prefWidth="224.0" text="Forza Aggiornamento">
+<font>
+<Font name="Arial Black" size="13.0" />
+</font>
+<graphic><ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../immagini/seleziona.png" />
+</image></ImageView>
+</graphic>
+</Button>
+</children>
+</AnchorPane>

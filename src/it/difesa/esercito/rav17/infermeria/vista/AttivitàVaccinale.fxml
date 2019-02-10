@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="549.0" prefWidth="1137.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="it.difesa.esercito.rav17.infermeria.controllo.AttivitàVaccinaleController">
+    <stylesheets>
+        <URL value="@stile.css" />
+    </stylesheets>
+<children><DatePicker fx:id="dataInizio" editable="false" layoutX="87.0" layoutY="15.0" prefHeight="27.0" prefWidth="152.0" /><Button layoutX="1104.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#chiusura" prefHeight="28.0" prefWidth="35.0" style="-fx-border-color: darkred; -fx-background-color: red; -fx-border-width: 1;" text="X" textFill="WHITE">
+<font>
+<Font name="Arial Black" size="12.0" />
+</font>
+</Button><Button layoutX="438.0" layoutY="1.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#riduciFinestra" prefHeight="28.0" prefWidth="30.0" style="-fx-border-color: grey; -fx-border-color: orange; -fx-background-color: yellow;" text="▼" textFill="WHITE" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="0.0">
+<font>
+<Font name="Arial Bold" size="12.0" />
+</font>
+</Button><Label layoutX="41.378662109375" layoutY="19.5" text="inizio">
+<font>
+<Font name="Arial Black" size="12.0" />
+</font></Label><Label layoutX="285.0" layoutY="20.0" text="fine">
+<font>
+<Font name="Arial Black" size="12.0" />
+</font>
+</Label><DatePicker fx:id="dataFine" editable="false" layoutX="325.0" layoutY="15.0" prefHeight="27.0" prefWidth="152.0" /><Button layoutX="522.0" layoutY="13.0" mnemonicParsing="false" onAction="#cerca" prefHeight="27.0" prefWidth="142.0" text="Cerca">
+<font>
+<Font name="Arial Black" size="13.0" />
+</font>
+</Button><TableView fx:id="tabellaAnamnesiVaccinale" layoutX="10.0" layoutY="68.0" prefHeight="468.0" prefWidth="391.0">
+<columns>
+<TableColumn fx:id="colonnaData" prefWidth="109.0" text="data" />
+<TableColumn fx:id="colonnaCp" prefWidth="180.0" text="cp" />
+<TableColumn fx:id="colonnaMilitari" prefWidth="75.0" text="militari" />
+</columns>
+</TableView><TableView fx:id="tabellaVaccini" layoutX="477.0" layoutY="68.0" prefHeight="468.0" prefWidth="643.0">
+<columns>
+<TableColumn fx:id="colonnaProfilassi" prefWidth="219.0" text="profilassi" />
+<TableColumn fx:id="colonnaDose" prefWidth="98.0" text="dose" />
+<TableColumn fx:id="colonnaSesso" prefWidth="73.0" text="sesso" /><TableColumn fx:id="colonnaEtà" prefWidth="73.0" text="età" /><TableColumn fx:id="colonnaNumero" prefWidth="73.0" text="vaccini" />
+</columns>
+</TableView>
+</children>
+</AnchorPane>

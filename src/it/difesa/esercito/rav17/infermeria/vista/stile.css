@@ -1,0 +1,282 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+/*
+.background{
+    -fx-background-color: #282828;
+}
+
+.label{
+    -fx-text-fill: white;
+}
+
+.choice-box{
+      -fx-background-color: 
+        linear-gradient(#61a2b1, #2A5058);
+    -fx-padding: 2 2 2 2;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+}
+
+
+.choice-box .label{
+    -fx-text-fill: -fx-text-background-color;
+}
+
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}
+
+.root {
+-fx-base: rgb(100, 100, 100);
+-fx-background: rgb(50, 50, 50);
+-fx-control-inner-background:  rgb(50, 50, 50);
+}
+
+.text-field{
+    -fx-background-color: rgb(200, 200, 200);
+    -fx-text-fill: black;
+}
+
+.text-field:focused {
+    -fx-background-color: white;
+}
+
+.text-area {
+    -fx-background-color: rgba(200,200,200,0.7);
+}
+
+.text-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+
+
+.text-area .scroll-pane .content{
+    -fx-background-color: transparent;
+}
+
+.tab {
+-fx-background-color: linear-gradient(to top, -fx-base, derive(-fx-base,50%));
+}
+
+.menu-bar {
+-fx-background-color: linear-gradient(to bottom, -fx-base, derive(-fx-base,50%));
+}
+
+.menu-bar .label {
+    -fx-text-fill: greenyellow;
+    -fx-font-family: "Arial";
+}
+
+.tool-bar:horizontal {
+-fx-background-color:
+linear-gradient(to bottom, derive(-fx-base,+50%), derive(-fx-base,-40%), derive(-fx-base,-20%));
+}
+/*
+.button {
+-fx-background-color: transparent;
+}
+
+.button:hover {
+-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+-fx-color: -fx-hover-base;
+}
+*/
+/*
+.table-view {
+-fx-table-cell-border-color:derive(-fx-base,+10%);
+-fx-table-header-border-color:derive(-fx-base,+20%);
+}
+
+.split-pane:horizontal > * > .split-pane-divider {
+-fx-border-color: transparent -fx-base transparent -fx-base;
+-fx-background-color: transparent, derive(-fx-base,20%);
+-fx-background-insets: 0, 0 1 0 1;
+}
+
+.my-gridpane {
+-fx-background-color: radial-gradient(radius 100%, derive(-fx-base,20%), derive(-fx-base,-20%));
+}
+
+.separator-label {
+-fx-text-fill: orange;
+}
+/*
+/*
+.menu-bar {
+    -fx-background-color: derive(#1d1d1d,20%);
+    -fx-selection-bar: derive(-fx-background,-7%);
+}
+
+
+/*
+.table-view {
+    -fx-base: #1d1d1d;
+    -fx-control-inner-background: #1d1d1d;
+    -fx-background-color: #1d1d1d;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 5;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 10;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: 
+        transparent
+        transparent
+        derive(-fx-base, 80%) 
+        transparent;
+    -fx-border-insets: 0 10 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 10;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: white;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-focus-color;
+}
+*/
+
+/*
+.root {
+-fx-base: rgb(50, 50, 50);
+-fx-background: rgb(50, 50, 50);
+-fx-control-inner-background:  rgb(50, 50, 50);
+-fx-text-base-color: rgb(200,250,200);
+-fx-text-background-color: rgb(200,250,200);
+-fx-text-inner-color: greenyellow;
+
+}
+.tree-view:disabled{
+-fx-opacity: 1;
+}
+ 
+.tab {
+-fx-background-color: linear-gradient(to top, -fx-base, derive(-fx-base,30%));
+}
+
+.table-view:disabled{
+-fx-opacity: 1;
+}
+ 
+.menu-bar {
+-fx-background-color: linear-gradient(to bottom, -fx-base, derive(-fx-base,30%));
+}
+ 
+.tool-bar:horizontal {
+-fx-background-color:
+ linear-gradient(to bottom, derive(-fx-base,+50%), derive(-fx-base,-40%), derive(-fx-base,-20%));
+}
+ 
+.button {
+-fx-background-color: rgb(20,20,20);
+}
+ 
+.button:hover {
+-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+-fx-color: -fx-hover-base;
+}
+ 
+.table-view {
+-fx-table-cell-border-color:derive(-fx-base,+10%);
+-fx-table-header-border-color:derive(-fx-base,+20%);
+}
+ 
+.split-pane:horizontal > * > .split-pane-divider {
+-fx-border-color: transparent -fx-base transparent -fx-base;
+-fx-background-color: transparent, derive(-fx-base,20%);
+-fx-background-insets: 0, 0 1 0 1;
+}
+ 
+.my-gridpane {
+-fx-background-color: radial-gradient(radius 100%, derive(-fx-base,20%), derive(-fx-base,-20%));
+}
+ 
+.separator-label {
+-fx-text-fill: orange;
+}
+
+*/
+.root { 
+/*
+    -fx-background-image: url("/it/difesa/esercito/rav17/infermeria/immagini/sfondo.jpg");
+*/
+    -fx-background-color: rgba(20, 20, 20, 0.7);
+}
+
+/*
+ * etichette generiche
+ */
+.label{
+    -fx-text-fill: greenyellow;
+}
+
+
+/*
+ * lista menu (principale)
+ */
+.menu-bar .label {
+    -fx-text-fill: black;
+}
+
+
+/*
+ * lista menu (mouse)
+ */
+.context-menu .label{
+     -fx-text-fill: black;
+}
+
+/* 
+ * colora tutti i campi selezionati dei munu
+ */
+.menu-item:focused {
+     -fx-background-color: greenyellow;
+}
+
+
+/*
+ * lista menu campo a tendina
+ */
+.choice-box .label{
+    -fx-text-fill: -fx-text-background-color;
+}
+
+/*
+* titolo colonne tabelle
+*/
+.table-view .column-header-background .label{
+    -fx-text-fill: black;
+}
+
+.accordion .titled-pane > *.content {
+   -fx-background-color: white;
+}
+
+
+.accordion .titled-pane .label {
+   -fx-text-fill: #444;
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="537.0" prefWidth="342.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.difesa.esercito.rav17.infermeria.controllo.ListaCorsoController">
+    <stylesheets>
+        <URL value="@stile.css" />
+    </stylesheets>
+<children>
+<TableView fx:id="tabella" layoutX="5.0" layoutY="93.0" prefHeight="385.0" prefWidth="332.0" styleClass="background">
+<columns>
+<TableColumn fx:id="colonna" prefWidth="308.0" text="corso" />
+</columns>
+<contextMenu>
+<ContextMenu>
+<items>
+<MenuItem mnemonicParsing="false" onAction="#rimuoviCorso" text="Elimina">
+<graphic><ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../immagini/elimina.png" />
+</image></ImageView>
+</graphic></MenuItem>
+</items>
+</ContextMenu>
+</contextMenu>
+</TableView>
+<Button layoutX="222.0" layoutY="29.0" mnemonicParsing="false" onAction="#aggiungiCorso" prefHeight="40.0" prefWidth="122.0" text="Aggiungi" textFill="#0d00ff">
+<font>
+<Font name="Arial Black" size="13.0" />
+</font>
+<graphic><ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../immagini/aggiungi.png" />
+</image></ImageView>
+</graphic>
+</Button>
+<Button layoutX="210.0" layoutY="483.0" mnemonicParsing="false" onAction="#rimuoviCorso" prefHeight="40.0" prefWidth="122.0" text="Elimina" textFill="#800b0b">
+<font>
+<Font name="Arial Black" size="13.0" />
+</font>
+<graphic><ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../immagini/elimina.png" />
+</image></ImageView>
+</graphic>
+</Button>
+<Label fx:id="messaggio" layoutX="5.0" layoutY="69.0" prefHeight="20.0" prefWidth="340.0" text="messaggio errore!" textFill="RED">
+<font>
+<Font name="Arial Black" size="13.0" />
+</font>
+</Label>
+<TextField fx:id="campo" layoutX="5.0" layoutY="35.0" prefHeight="27.0" prefWidth="217.0" /><Button layoutX="311.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ritornoFinestraPrincipale" prefHeight="28.0" prefWidth="35.0" style="-fx-border-color: darkred; -fx-background-color: red; -fx-border-width: 1;" text="X" textFill="WHITE">
+<font>
+<Font name="Arial Black" size="12.0" />
+</font>
+</Button>
+</children>
+</AnchorPane>
