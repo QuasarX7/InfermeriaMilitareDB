@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="255.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="it.difesa.esercito.rav17.infermeria.controllo.FinestraInputMenuController">
+<AnchorPane id="AnchorPane" prefHeight="255.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="it.quasar_x7.infermeria.controllo.FinestraInputMenuController">
     <stylesheets>
         <URL value="@stile.css" />
     </stylesheets>

@@ -10,8 +10,8 @@ public class Risorse {
 
     public class Info{
         public static final String AUTORE = "AUTORE:  Dott. Domenico della PERUTA";
-        public static final String VERSIONE = "VERSIONE:  4.0.1";
-        public static final String DATA_MODIFICA = "DATA AGG.:  04/09/2018";
+        public static final String VERSIONE = "VERSIONE:  4.0.2";
+        public static final String DATA_MODIFICA = "DATA AGG.:  11/04/2019";
     }
     
     public class Conferma {
@@ -266,7 +266,7 @@ public class Risorse {
     }
     
     public class Immagine{
-        static private final String PATH = "/it/difesa/esercito/rav17/infermeria/immagini/";
+        static private final String PATH = "/it/quasar_x7/infermeria/immagini/";
         
         static public final String ATTESA       = PATH + "infermiera_attesa.gif";
         static public final String MODIFICA     = PATH + "impostazioni.png";
@@ -276,7 +276,7 @@ public class Risorse {
     }
     
     public class FXML{
-        static private final String PATH = "/it/difesa/esercito/rav17/infermeria/vista/";
+        static private final String PATH = "/it/quasar_x7/infermeria/vista/";
         
         static public final String LOGIN                = PATH + "Login.fxml";
         static public final String CREA_FILE_IP         = PATH + "CreaFileIP.fxml";

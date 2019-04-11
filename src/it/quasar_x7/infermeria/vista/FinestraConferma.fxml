@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="278.0" prefWidth="600.0" stylesheets="@stile.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.difesa.esercito.rav17.infermeria.controllo.FinestraConfermaController">
+<AnchorPane id="AnchorPane" prefHeight="278.0" prefWidth="600.0" stylesheets="@stile.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.quasar_x7.infermeria.controllo.FinestraConfermaController">
 <children><ImageView fitHeight="239.0" fitWidth="197.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
 <image>
 <Image url="@../immagini/infermiera_attesa.gif" />

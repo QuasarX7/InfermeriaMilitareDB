@@ -2,5 +2,5 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 <comment>ip o nome server host MySQL</comment>
-<entry key="IP">localhost</entry>
+<entry key="IP">127.0.0.1</entry>
 </properties>

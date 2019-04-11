@@ -1,6 +1,7 @@
 package it.quasar_x7.infermeria.controllo;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,6 +13,8 @@ import it.quasar_x7.infermeria.programma.Risorse;
 import it.quasar_x7.java.utile.DataOraria;
 import it.quasar_x7.java.utile.Errore;
 import it.quasar_x7.java.utile.Testo;
+import it.quasar_x7.javafx.Finestra;
+
 import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -208,7 +211,9 @@ public class FinestraImpostazioniController implements Initializable {
         Programma.campoData(campoData7);
         Programma.campoData(campoData8);
         
-        selezionaMedico.getItems().addAll(Programma.datiMedico.tuttiMedici());
+        ArrayList<String> medici = Programma.datiMedico.tuttiMedici();
+        if(medici != null)
+        	selezionaMedico.getItems().addAll(medici);
         
         selezionaSom.getItems().addAll(
                 new String[] {

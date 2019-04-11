@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="395.0" prefWidth="863.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.difesa.esercito.rav17.infermeria.controllo.AggiungiVacciniController">
+<AnchorPane id="AnchorPane" prefHeight="395.0" prefWidth="863.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.quasar_x7.infermeria.controllo.AggiungiVacciniController">
     <stylesheets>
         <URL value="@stile.css" />
     </stylesheets>
